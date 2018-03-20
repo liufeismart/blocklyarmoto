@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/icon_back"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_image"
+        android:layout_width="900dp"
+        android:layout_height="450dp"
+        android:layout_centerInParent="true" />
+    <ImageButton
+        android:id="@+id/ib_pre"
+        android:layout_width="74dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/icon_pre"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+    <ImageButton
+        android:id="@+id/ib_next"
+        android:layout_width="74dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/icon_next"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

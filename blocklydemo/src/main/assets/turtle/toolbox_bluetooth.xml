@@ -1,0 +1,13 @@
+<toolbox>
+    <category name="Light" colour="160">
+        <block type="light_up">
+            <field name="VALUE">13</field>
+        </block>
+        <block type="light_down">
+            <field name="VALUE">13</field>
+        </block>
+        <block type="delay">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

@@ -1,0 +1,4 @@
+<resources>
+<dimen name="category_tab_font_size">40dp</dimen>
+<dimen name="category_tabs_margin">10dp</dimen>
+</resources>

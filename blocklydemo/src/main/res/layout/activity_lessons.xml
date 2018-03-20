@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_bluetooth"
+        android:layout_width="640dp"
+        android:layout_height="200dp"
+        android:text="远程遥控链接"
+        android:textSize="60dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="#1bbbbd"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:id="@+id/tv_device_info"
+        android:layout_width="640dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="器材介绍"
+        android:textSize="60dp"
+        android:textColor="#ffffff"
+        android:background="#5b198f"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_lessons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_device_info"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+</RelativeLayout>

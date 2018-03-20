@@ -1,0 +1,55 @@
+[
+  {
+    "type": "electrical_machinery_1",
+    "message0": "向电机1输入 %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NUM",
+        "options": [
+          ["-200",-200],
+          ["-150",-150],
+          ["-100",-100],
+          ["-50",-50],
+          ["0", 0],
+          ["50",50],
+          ["100",100],
+          ["150",150],
+          ["200",200]
+        ]
+      }
+    ],
+    "colour": 260,
+    "previousStatement": null,
+    "nextStatement": null,
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "electrical_machinery_2",
+    "message0": "向电机2输入 %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NUM",
+        "options": [
+
+          ["-200",-200],
+          ["-150",-150],
+          ["-100",-100],
+          ["-50",-50],
+          ["0", 0],
+          ["50",50],
+          ["100",100],
+          ["150",150],
+          ["200",200]
+          ]
+      }
+    ],
+
+    "colour": 260,
+    "previousStatement": null,
+    "nextStatement": null,
+    "tooltip": "Returns the length of a list."
+  }
+]
+

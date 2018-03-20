@@ -1,0 +1,15 @@
+<toolbox>
+    <category name="电机" colour="160">
+        <block type="electrical_machinery_1">
+            <field name="NUM">100</field>
+        </block>
+        <block type="electrical_machinery_2">
+            <field name="NUM">100</field>
+        </block>
+    </category>
+    <category name="时间" colour="160">
+        <block type="delay">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

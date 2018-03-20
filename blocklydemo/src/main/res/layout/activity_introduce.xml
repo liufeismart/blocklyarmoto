@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        
+        android:layout_width="1200dp"
+        android:layout_height="400dp"
+        android:src="@mipmap/introduce"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/tv_structure"
+        android:text="结构组装"
+        style="@style/introduce_style"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="100dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/shape_bg_item_structure"/>
+    <TextView
+        android:id="@+id/tv_electrocircuit"
+        android:text="电路组装"
+        style="@style/introduce_style"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_bg_item_electrocircuit"/>
+    <TextView
+        android:id="@+id/tv_video"
+        android:text="组装视频"
+        style="@style/introduce_style"
+        android:layout_marginRight="100dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape_bg_item_video"/>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/tv_toolbox"
+    android:layout_width="180dp"
+    android:layout_height="90dp"
+    android:textSize="@dimen/category_tab_font_size"
+    android:textColor="#ffffff"
+    android:maxLines="1"
+    android:singleLine="true"
+    android:gravity="center"/>
+</LinearLayout>
