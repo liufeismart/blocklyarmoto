@@ -7,7 +7,7 @@
         <field name="NUM">200</field>
         <next>
           <block type="delay" id="94f9b3af-d7ee-473e-a525-70ed55667866">
-            <field name="NUM">10</field>
+            <field name="NUM">3</field>
             <next>
               <block type="electrical_machinery_1" id="7f18ecd9-d3c2-4ee7-9d12-c172dd35054e">
                 <field name="NUM">-200</field>
@@ -16,7 +16,7 @@
                     <field name="NUM">-200</field>
                     <next>
                       <block type="delay" id="7cc2fe49-f726-467e-a63b-2166201c3a93">
-                        <field name="NUM">10</field>
+                        <field name="NUM">3</field>
                       </block>
                     </next>
                   </block>

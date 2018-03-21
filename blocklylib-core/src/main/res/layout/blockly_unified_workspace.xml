@@ -44,26 +44,33 @@
               blockly:closeable="true"
               tools:ignore="MissingPrefix"/>
 
-    <ImageButton android:id="@+id/blockly_run_button"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:background="@color/translucent"
-        android:src="@mipmap/icon_run"
-        android:scaleType="fitXY"
-        android:layout_above="@+id/blockly_overlay_buttons"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="30dp" />
+    <!--<ImageButton android:id="@+id/blockly_run_button"-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:background="@color/translucent"-->
+        <!--android:src="@mipmap/icon_run"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_above="@+id/blockly_overlay_buttons"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginBottom="50dp"-->
+        <!--android:layout_marginRight="30dp" />-->
 
     <LinearLayout android:id="@+id/blockly_overlay_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
         android:layout_marginRight="80dp"
         android:orientation="vertical">
+        <ImageButton android:id="@+id/blockly_run_button"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:background="@color/translucent"
+            android:src="@mipmap/icon_run"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="50dp"
+            android:layout_gravity="center_horizontal"/>
 
         <ImageButton android:id="@+id/blockly_zoom_in_button"
             android:layout_width="wrap_content"
@@ -94,6 +101,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/translucent"
+            android:layout_gravity="center_horizontal"
             android:padding="2dp"/>
+        <ImageButton android:id="@+id/blockly_demo_button"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:background="@color/translucent"
+            android:src="@mipmap/icon_demo"
+            android:scaleType="fitXY"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </RelativeLayout>

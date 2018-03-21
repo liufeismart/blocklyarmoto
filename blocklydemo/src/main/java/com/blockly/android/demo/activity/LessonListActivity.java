@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -57,9 +56,6 @@ public class LessonListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
         initView();
-        Configuration config = getResources().getConfiguration();
-        int  smallestScreenWidth = config.smallestScreenWidthDp;
-        Log.v(TAG, "smallestScreenWidth = " + smallestScreenWidth);
     }
 
     private void initView() {

@@ -190,7 +190,7 @@ public class BlockView extends AbstractBlockView<InputView> {
         } else {
             mOutputConnectorMargin = 0;
         }
-
+        Log.v("BlockView", "onMeasure("+ mBlockViewSize.x + ", "+ mBlockViewSize.y+")");
         setMeasuredDimension(mBlockViewSize.x, mBlockViewSize.y);
     }
 
@@ -682,7 +682,7 @@ public class BlockView extends AbstractBlockView<InputView> {
 
     private void initDrawingObjects() {
 
-        int blockColour = mBlock.getColor();
+        int blockColour = 0;
         Integer colorId = colorMap.get(mBlock.getType());
         if(colorId!=null) {
             blockColour = this.getResources().getColor(colorId);

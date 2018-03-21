@@ -64,17 +64,14 @@
     </activity>
         <activity
             android:name=".activity.QRWaitActivity"
-            android:label="@string/bluetooth_activity_name"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
             android:name=".activity.QRResultActivity"
-            android:label="@string/bluetooth_activity_name"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
             android:name=".activity.LEDActivity"
-            android:label="@string/bluetooth_activity_name"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity

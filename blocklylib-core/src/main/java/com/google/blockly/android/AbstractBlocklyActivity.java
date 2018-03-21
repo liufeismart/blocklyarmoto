@@ -526,8 +526,8 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        mActionBar = getSupportActionBar();
-        mActionBar.setDisplayShowTitleEnabled(true);
+//        mActionBar = getSupportActionBar();
+//        mActionBar.setDisplayShowTitleEnabled(true);
 
         // Create and attach content view into content container.  If content is a fragment, content
         // will be null here and the container will be populated during the FragmentTransaction.
@@ -547,6 +547,17 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if (getController().getWorkspace().hasBlocks()) {
                         onRunCode();
+                    } else {
+                        Log.i(TAG, "No blocks in workspace. Skipping run request.");
+                    }
+                }
+            });
+            ImageButton blockly_demo_button = content.findViewById(R.id.blockly_demo_button);
+            blockly_demo_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (getController().getWorkspace().hasBlocks()) {
+                        onAutoload();
                     } else {
                         Log.i(TAG, "No blocks in workspace. Skipping run request.");
                     }
@@ -593,8 +604,8 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
                 GravityCompat.START);
 
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
+//        mActionBar.setDisplayHomeAsUpEnabled(true);
+//        mActionBar.setHomeButtonEnabled(true);
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.

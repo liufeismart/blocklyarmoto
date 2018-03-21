@@ -25,7 +25,7 @@ public class QRScanActivity extends Activity implements ZXingScannerView.ResultH
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrscan);
         zxsv_ = findViewById(R.id.zxsv_);
-        zxsv_.setResultHandler(this);
+
     }
 
 
@@ -34,6 +34,7 @@ public class QRScanActivity extends Activity implements ZXingScannerView.ResultH
         Log.v(TAG, "onResume");
         super.onResume();
         zxsv_.startCamera();
+        zxsv_.setResultHandler(this);
     }
 
     @Override
