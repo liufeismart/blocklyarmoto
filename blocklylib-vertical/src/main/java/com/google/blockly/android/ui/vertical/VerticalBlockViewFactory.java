@@ -21,6 +21,7 @@ import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import com.google.blockly.android.control.ConnectionManager;
 import com.google.blockly.android.ui.BlockGroup;
@@ -142,6 +143,9 @@ public class VerticalBlockViewFactory extends BlockViewFactory<BlockView, InputV
         if (layoutResId != 0) {
             fieldView = (FieldView) mLayoutInflater.inflate(layoutResId, null);
             fieldView.setField(field);
+            if(fieldView instanceof TextView) {
+                ((TextView)fieldView).setTextSize(30);
+            }
         }
 
         // Field specific configuration can be done here.
@@ -163,6 +167,7 @@ public class VerticalBlockViewFactory extends BlockViewFactory<BlockView, InputV
                 }
                 break;
         }
+
         return fieldView;
     }
 

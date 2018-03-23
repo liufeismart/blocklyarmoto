@@ -556,11 +556,7 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
             blockly_demo_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (getController().getWorkspace().hasBlocks()) {
-                        onAutoload();
-                    } else {
-                        Log.i(TAG, "No blocks in workspace. Skipping run request.");
-                    }
+                    onAutoload();
                 }
             });
         }

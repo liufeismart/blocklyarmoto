@@ -83,6 +83,26 @@
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
+            android:name=".activity.TrackingActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.SkillMovesActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.AvoidanceActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.FollowActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.SwingAroundActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
             android:name=".activity.IntroduceActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>

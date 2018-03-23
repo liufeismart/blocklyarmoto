@@ -1,0 +1,41 @@
+[
+  {
+    "type": "tracking_left",
+    "message0": "左边的循迹模块输出",
+    "colour": 260,
+    "output": "NUM",
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "tracking_middle",
+    "message0": "中间的循迹模块输出",
+    "colour": 260,
+    "output": "NUM",
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "tracking_right",
+    "message0": "右边的循迹模块输出",
+    "colour": 260,
+    "output": "NUM",
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "tracking_result",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NUM",
+        "options": [
+          ["0",0],
+          ["1",1]
+        ]
+      }
+    ],
+    "colour": 260,
+    "output": "NUM",
+    "tooltip": "Returns the length of a list."
+  }
+]
+

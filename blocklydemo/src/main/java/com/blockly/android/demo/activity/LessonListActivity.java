@@ -49,7 +49,14 @@ public class LessonListActivity extends Activity {
                         "第六课\n避障","第七课\n跟随",
                         "第八课\n摇头晃脑"};
 
-    private Class[] jumpActivity = {IntroduceActivity.class, ForwardBackActivity.class, LeftRightActivity.class};
+    private Class[] jumpActivity = {IntroduceActivity.class,
+            ForwardBackActivity.class,
+            LeftRightActivity.class,
+            SkillMovesActivity.class,
+            TrackingActivity.class,
+            AvoidanceActivity.class,
+            FollowActivity.class,
+            SwingAroundActivity.class};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate");
@@ -111,9 +118,7 @@ public class LessonListActivity extends Activity {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(index<3) {
-                        startActivity(new Intent(LessonListActivity.this, jumpActivity[index]));
-                    }
+                    startActivity(new Intent(LessonListActivity.this, jumpActivity[index]));
                 }
             });
         }

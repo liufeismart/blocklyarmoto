@@ -1,0 +1,12 @@
+<toolbox>
+    <category name="舵机" colour="160">
+        <block type="steering_engine">
+            <field name="NUM">0</field>
+        </block>
+    </category>
+    <category name="时间" colour="160">
+        <block type="delay">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

@@ -1,7 +1,7 @@
 [
   {
     "type": "controls_if",
-    "message0": "if %1 do %2",
+    "message0": "如果 %1    %2",
     "args0": [
       {
         "type": "input_value",
@@ -21,7 +21,7 @@
   },
   {
     "type": "controls_ifelse",
-    "message0": "if %1",
+    "message0": "如果 %1",
     "args0": [
       {
         "type": "input_value",
@@ -29,14 +29,14 @@
         "check": "Boolean"
       }
     ],
-    "message1": "do %1",
+    "message1": "   %1",
     "args1": [
       {
         "type": "input_statement",
         "name": "DO0"
       }
     ],
-    "message2": "else %1",
+    "message2": "否则 %1",
     "args2": [
       {
         "type": "input_statement",
@@ -95,11 +95,11 @@
         "name": "OP",
         "options": [
           [
-            "and",
+            "和",
             "AND"
           ],
           [
-            "or",
+            "或者",
             "OR"
           ]
         ]

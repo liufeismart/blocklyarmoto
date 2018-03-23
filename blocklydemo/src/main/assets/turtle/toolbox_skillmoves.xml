@@ -1,0 +1,23 @@
+<toolbox>
+    <category name="循环" colour="120">
+        <block type="turtle_repeat_internal">
+            <field name="TIMES">4</field>
+        </block>
+    </category>
+    <!--<category name="定义动作" colour="160">-->
+        <!--<block type="defination_action"/>-->
+    <!--</category>-->
+    <category name="电机" colour="160">
+        <block type="electrical_machinery_1">
+            <field name="NUM">100</field>
+        </block>
+        <block type="electrical_machinery_2">
+            <field name="NUM">100</field>
+        </block>
+    </category>
+    <category name="时间" colour="160">
+        <block type="delay">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

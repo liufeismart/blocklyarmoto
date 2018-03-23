@@ -1,0 +1,65 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_repeat_internal" id="5152dc87-6913-4873-9172-701a400a8317" x="68.0" y="21.0">
+        <field name="TIMES">4</field>
+        <statement name="DO">
+            <block type="electrical_machinery_1" id="b8e7cf44-0c49-466e-86c1-ee4fb0ac2cc0">
+                <field name="NUM">100</field>
+                <next>
+                    <block type="electrical_machinery_2" id="387553d2-f2c4-4cae-8e07-c241739575af">
+                        <field name="NUM">100</field>
+                        <next>
+                            <block type="delay" id="d58d666b-57ca-495c-88ae-2869e5858576">
+                                <field name="NUM">3</field>
+                                <next>
+                                    <block type="electrical_machinery_1" id="97fa14b9-c10f-4d57-9a11-98ebb087ebd4">
+                                        <field name="NUM">100</field>
+                                        <next>
+                                            <block type="electrical_machinery_2" id="8ad90dcd-75ea-4d6f-a8a7-9aee9fc9d649">
+                                                <field name="NUM">-100</field>
+                                                <next>
+                                                    <block type="delay" id="df3fa533-2810-4791-84c3-d10617afba1f">
+                                                        <field name="NUM">3</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <next>
+            <block type="turtle_repeat_internal" id="3a0e89fc-9b3c-4a4c-ab17-35d845d7039f">
+                <field name="TIMES">5</field>
+                <statement name="DO">
+                    <block type="electrical_machinery_2" id="09542bea-d6a2-4125-9849-f46b35516bce">
+                        <field name="NUM">100</field>
+                        <next>
+                            <block type="electrical_machinery_1" id="60bf058e-ad73-4d7b-af6c-f3ad4d82cc52">
+                                <field name="NUM">0</field>
+                                <next>
+                                    <block type="delay" id="e6bb71b2-8c79-4621-b99a-7758974812bf">
+                                        <field name="NUM">3</field>
+                                        <next>
+                                            <block type="electrical_machinery_1" id="5469c9df-d8f3-438e-954d-7c48ff9d92c9">
+                                                <field name="NUM">-100</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="c35293c2-c942-4f0a-a037-da889a9a3c63">
+                                                        <field name="NUM">-100</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+</xml>

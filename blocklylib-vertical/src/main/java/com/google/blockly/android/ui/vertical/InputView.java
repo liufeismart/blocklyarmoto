@@ -16,14 +16,14 @@
 package com.google.blockly.android.ui.vertical;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
-import com.google.blockly.android.ui.BlockGroup;
-import com.google.blockly.model.Block;
-import com.google.blockly.model.Input;
 import com.google.blockly.android.ui.AbstractInputView;
+import com.google.blockly.android.ui.BlockGroup;
 import com.google.blockly.android.ui.BlockView;
 import com.google.blockly.android.ui.fieldview.FieldView;
+import com.google.blockly.model.Input;
 
 import java.util.List;
 
@@ -248,6 +248,7 @@ public class InputView extends AbstractInputView {
             View field = (View) mFieldViews.get(j);
             field.measure(widthMeasureSpec, heightMeasureSpec);
             mTotalFieldWidth += field.getMeasuredWidth();
+            Log.v("BlockView", "field.getMeasuredWidth() = " + field.getMeasuredWidth());
             mMaxFieldHeight = Math.max(mMaxFieldHeight, field.getMeasuredHeight());
         }
 

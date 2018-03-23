@@ -678,6 +678,9 @@ public class BlockView extends AbstractBlockView<InputView> {
         // widths.
         mBlockViewSize.x = Math.max(mBlockContentWidth,
                 Math.max(maxValueInputTotalWidth, maxStatementInputTotalWidth));
+        Log.v("BlockView", "mBlockContentWidth = " + mBlockContentWidth);
+        Log.v("BlockView", "maxStatementInputTotalWidth = " + maxStatementInputTotalWidth);
+        Log.v("BlockView", "maxValueInputTotalWidth = " + maxValueInputTotalWidth);
     }
 
     private void initDrawingObjects() {
