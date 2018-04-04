@@ -14,7 +14,7 @@ public class Constants {
 
 
     public static final int MSG_BLUETOOTH_CONNECT_SUCCESS = 0;//蓝牙连接成功
-    public static final int MSG_BLUETOOTH_CONNECT_FAIL = 2;//蓝牙连接成功
+    public static final int MSG_BLUETOOTH_CONNECT_FAIL = 2;//蓝牙连接失败
     public static final int MSG_DELIVERY = 1; // 消息传递
 
     public static final String SCAN_RESULT = "SCAN_RESULT";
