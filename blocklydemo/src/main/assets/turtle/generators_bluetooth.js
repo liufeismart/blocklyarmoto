@@ -10,8 +10,8 @@ Blockly.JavaScript['light_down'] = function(block) {
   var value = block.getFieldValue('VALUE');
   return 'Light.lightdown:'+value+'\n';
 };
-Blockly.JavaScript['delay'] = function(block) {
+Blockly.JavaScript['last_time'] = function(block) {
   // Generate JavaScript for moving forward or backwards.
   var value = block.getFieldValue('NUM');
-  return 'delay:' +value+'\n';
+  return 'last_time:' +value+'\n';
 };

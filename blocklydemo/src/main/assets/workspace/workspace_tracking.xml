@@ -1,27 +1,15 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="controls_ifelse" id="29eed2b5-65ef-4627-86b1-563a446b6547" x="658.0" y="472.0">
-        <value name="IF0">
-            <block type="logic_compare" id="7e4b03f3-8617-472b-9b95-dc244ed21ed8">
-                <value name="A">
-                    <block type="tracking_left" id="44c49704-cb8b-4849-9d6f-43870401aa0b" />
-                </value>
-                <value name="B">
-                    <block type="tracking_result" id="a7976d27-79a4-49ea-af4e-9f2bf0fcd9d8">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <field name="OP">EQ</field>
-            </block>
-        </value>
-        <statement name="DO0">
-            <block type="controls_ifelse" id="a9de115d-2c4e-4cfe-9be7-84e8df49fa44">
+    <block type="turtle_repeat_internal" id="b9890d3f-80dc-4f4b-8c67-bf98ab1a7938" x="700.0" y="525.0">
+        <field name="TIMES">-1</field>
+        <statement name="DO">
+            <block type="controls_ifelse" id="29eed2b5-65ef-4627-86b1-563a446b6547">
                 <value name="IF0">
-                    <block type="logic_compare" id="bc0c901a-8ddf-41cd-a917-2ffcf375b1d1">
+                    <block type="logic_compare" id="7e4b03f3-8617-472b-9b95-dc244ed21ed8">
                         <value name="A">
-                            <block type="tracking_middle" id="3b66431a-944c-486b-9ae2-5e24bcc32597" />
+                            <block type="tracking_left" id="44c49704-cb8b-4849-9d6f-43870401aa0b" />
                         </value>
                         <value name="B">
-                            <block type="tracking_result" id="27289241-eb10-4dd7-9e03-c193f39c47aa">
+                            <block type="tracking_result" id="a7976d27-79a4-49ea-af4e-9f2bf0fcd9d8">
                                 <field name="NUM">0</field>
                             </block>
                         </value>
@@ -29,14 +17,14 @@
                     </block>
                 </value>
                 <statement name="DO0">
-                    <block type="controls_ifelse" id="4707fa49-95f4-4952-a296-b0af0bd1f328">
+                    <block type="controls_ifelse" id="a9de115d-2c4e-4cfe-9be7-84e8df49fa44">
                         <value name="IF0">
-                            <block type="logic_compare" id="6b8b4c2a-cf5e-4992-a048-e52f277bf129">
+                            <block type="logic_compare" id="bc0c901a-8ddf-41cd-a917-2ffcf375b1d1">
                                 <value name="A">
-                                    <block type="tracking_right" id="00cfc0f8-4e83-4655-b958-92b9ef6aedb3" />
+                                    <block type="tracking_middle" id="3b66431a-944c-486b-9ae2-5e24bcc32597" />
                                 </value>
                                 <value name="B">
-                                    <block type="tracking_result" id="b2c4352a-d3f8-4fe6-a3ba-03f27d5a02d7">
+                                    <block type="tracking_result" id="27289241-eb10-4dd7-9e03-c193f39c47aa">
                                         <field name="NUM">0</field>
                                     </block>
                                 </value>
@@ -44,142 +32,95 @@
                             </block>
                         </value>
                         <statement name="DO0">
-                            <block type="electrical_machinery_1" id="4f0d8fa6-e68e-4de2-87b3-e953373ad624">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="52f9fa6a-7573-46e3-b533-e63279791860">
-                                        <field name="NUM">100</field>
-                                        <next>
-                                            <block type="delay" id="11ad3d92-72cf-48bf-90f7-d86e12fc0530">
-                                                <field name="NUM">1</field>
+                            <block type="controls_ifelse" id="4707fa49-95f4-4952-a296-b0af0bd1f328">
+                                <value name="IF0">
+                                    <block type="logic_compare" id="6b8b4c2a-cf5e-4992-a048-e52f277bf129">
+                                        <value name="A">
+                                            <block type="tracking_right" id="00cfc0f8-4e83-4655-b958-92b9ef6aedb3" />
+                                        </value>
+                                        <value name="B">
+                                            <block type="tracking_result" id="b2c4352a-d3f8-4fe6-a3ba-03f27d5a02d7">
+                                                <field name="NUM">0</field>
                                             </block>
-                                        </next>
+                                        </value>
+                                        <field name="OP">EQ</field>
                                     </block>
-                                </next>
-                            </block>
-                        </statement>
-                        <statement name="ELSE">
-                            <block type="electrical_machinery_1" id="8869ae9c-523d-48dd-a528-0c4544e7a6a5">
-                                <field name="NUM">50</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="f918e668-9315-401e-babb-70b9a82f72f7">
-                                        <field name="NUM">100</field>
-                                        <next>
-                                            <block type="delay" id="0ef7b5d8-9a41-4a43-83e1-0287e5ef6a1c">
-                                                <field name="NUM">1</field>
-                                            </block>
-                                        </next>
-                                    </block>
-                                </next>
-                            </block>
-                        </statement>
-                    </block>
-                </statement>
-                <statement name="ELSE">
-                    <block type="controls_if" id="0126c3b7-9ead-4c27-9daa-ffa91d7d4efc">
-                        <value name="IF0">
-                            <block type="logic_compare" id="424fd032-4c0e-486a-a1c3-7bdcc5d071a0">
-                                <value name="A">
-                                    <block type="tracking_right" id="3063d07d-14e1-417d-87bf-5ab6e40263e7" />
                                 </value>
-                                <value name="B">
-                                    <block type="tracking_result" id="7ebc0a95-7975-4354-ab60-3d5a10b2af06">
+                                <statement name="DO0">
+                                    <block type="last_time" id="0d4e3c2b-ca08-4cfb-9297-f0d88c0ccbf0">
                                         <field name="NUM">1</field>
-                                    </block>
-                                </value>
-                                <field name="OP">EQ</field>
-                            </block>
-                        </value>
-                        <statement name="DO0">
-                            <block type="electrical_machinery_1" id="42187b73-67cf-4590-a68e-3fbce32211db">
-                                <field name="NUM">0</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="00ee05e0-8f6c-4bac-81ea-d5f4a133542a">
-                                        <field name="NUM">100</field>
-                                        <next>
-                                            <block type="delay" id="1bf51a74-8d8c-4e3d-8db0-bf2dec659fc6">
-                                                <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="4f0d8fa6-e68e-4de2-87b3-e953373ad624">
+                                                <field name="NUM">100</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="52f9fa6a-7573-46e3-b533-e63279791860">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </next>
                                             </block>
-                                        </next>
+                                        </statement>
                                     </block>
-                                </next>
-                            </block>
-                        </statement>
-                    </block>
-                </statement>
-            </block>
-        </statement>
-        <statement name="ELSE">
-            <block type="controls_ifelse" id="85235306-fd9d-44c3-bbb4-eb4b624cb455">
-                <value name="IF0">
-                    <block type="logic_compare" id="6a89d188-6a1b-459b-99a4-96f425a22ef6">
-                        <value name="A">
-                            <block type="tracking_middle" id="79b689ef-d9a6-4289-80d1-80a54a2913ac" />
-                        </value>
-                        <value name="B">
-                            <block type="tracking_result" id="4d425495-0c0d-4c29-9c91-8ae1809d7b2e">
-                                <field name="NUM">0</field>
-                            </block>
-                        </value>
-                        <field name="OP">EQ</field>
-                    </block>
-                </value>
-                <statement name="DO0">
-                    <block type="controls_ifelse" id="f2be71f6-bb42-495e-8d32-521f7e3b5db2">
-                        <value name="IF0">
-                            <block type="logic_compare" id="00bd1c1e-0115-48f5-b6a6-6c418a9c2b4f">
-                                <value name="A">
-                                    <block type="tracking_right" id="10f4975b-486b-4b75-ab6f-689db70c5f59" />
-                                </value>
-                                <value name="B">
-                                    <block type="tracking_result" id="f0aaed9f-f14d-4d02-a14c-ca9c752da8ae">
-                                        <field name="NUM">0</field>
-                                    </block>
-                                </value>
-                                <field name="OP">EQ</field>
-                            </block>
-                        </value>
-                        <statement name="DO0">
-                            <block type="electrical_machinery_1" id="35a29769-cf2e-45e7-b2f4-89a557881e0f">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="19c8c973-2039-44b2-bd36-b8dce013d6a6">
-                                        <field name="NUM">50</field>
-                                        <next>
-                                            <block type="delay" id="fd6f63d9-aa52-4cec-aade-cbd2e0f59d4f">
-                                                <field name="NUM">1</field>
+                                </statement>
+                                <statement name="ELSE">
+                                    <block type="last_time" id="a2b8a34c-6edf-4a31-946c-9e11ff85fb2d">
+                                        <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="8869ae9c-523d-48dd-a528-0c4544e7a6a5">
+                                                <field name="NUM">50</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="f918e668-9315-401e-babb-70b9a82f72f7">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </next>
                                             </block>
-                                        </next>
+                                        </statement>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </statement>
                         <statement name="ELSE">
-                            <block type="electrical_machinery_1" id="25271b89-aba2-4e15-8847-9e5ce672f955">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="44d5017d-c8c0-474f-bdbe-214859257454">
-                                        <field name="NUM">100</field>
-                                        <next>
-                                            <block type="delay" id="69c5422b-e1e0-472e-887c-03368e040ccf">
+                            <block type="controls_if" id="0126c3b7-9ead-4c27-9daa-ffa91d7d4efc">
+                                <value name="IF0">
+                                    <block type="logic_compare" id="424fd032-4c0e-486a-a1c3-7bdcc5d071a0">
+                                        <value name="A">
+                                            <block type="tracking_right" id="3063d07d-14e1-417d-87bf-5ab6e40263e7" />
+                                        </value>
+                                        <value name="B">
+                                            <block type="tracking_result" id="7ebc0a95-7975-4354-ab60-3d5a10b2af06">
                                                 <field name="NUM">1</field>
                                             </block>
-                                        </next>
+                                        </value>
+                                        <field name="OP">EQ</field>
                                     </block>
-                                </next>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="last_time" id="f193a055-da5c-4e4d-9581-37153062acf3">
+                                        <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="42187b73-67cf-4590-a68e-3fbce32211db">
+                                                <field name="NUM">0</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="00ee05e0-8f6c-4bac-81ea-d5f4a133542a">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
                             </block>
                         </statement>
                     </block>
                 </statement>
                 <statement name="ELSE">
-                    <block type="controls_if" id="abe84802-7d5b-4f41-8161-77cb196d4fcf">
+                    <block type="controls_ifelse" id="85235306-fd9d-44c3-bbb4-eb4b624cb455">
                         <value name="IF0">
-                            <block type="logic_compare" id="68b14c30-7262-4971-a4d5-23466c806b9b">
+                            <block type="logic_compare" id="6a89d188-6a1b-459b-99a4-96f425a22ef6">
                                 <value name="A">
-                                    <block type="tracking_right" id="bf2fb766-c061-4e6a-a600-cebfaae6ebfe" />
+                                    <block type="tracking_middle" id="79b689ef-d9a6-4289-80d1-80a54a2913ac" />
                                 </value>
                                 <value name="B">
-                                    <block type="tracking_result" id="18943564-c486-4b1a-a032-1e802f7b20db">
+                                    <block type="tracking_result" id="4d425495-0c0d-4c29-9c91-8ae1809d7b2e">
                                         <field name="NUM">0</field>
                                     </block>
                                 </value>
@@ -187,18 +128,82 @@
                             </block>
                         </value>
                         <statement name="DO0">
-                            <block type="electrical_machinery_1" id="4b533ba1-fa70-45d4-b861-1ae93f34a56d">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="e0430f75-1d3b-40dc-9888-bd27d5fc7603">
-                                        <field name="NUM">0</field>
-                                        <next>
-                                            <block type="delay" id="bf097d0b-5361-4c2b-b8cf-86f80df4d0ef">
-                                                <field name="NUM">1</field>
+                            <block type="controls_ifelse" id="f2be71f6-bb42-495e-8d32-521f7e3b5db2">
+                                <value name="IF0">
+                                    <block type="logic_compare" id="00bd1c1e-0115-48f5-b6a6-6c418a9c2b4f">
+                                        <value name="A">
+                                            <block type="tracking_right" id="10f4975b-486b-4b75-ab6f-689db70c5f59" />
+                                        </value>
+                                        <value name="B">
+                                            <block type="tracking_result" id="f0aaed9f-f14d-4d02-a14c-ca9c752da8ae">
+                                                <field name="NUM">0</field>
                                             </block>
-                                        </next>
+                                        </value>
+                                        <field name="OP">EQ</field>
                                     </block>
-                                </next>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="last_time" id="fcb243b5-b6a1-4bbc-b0dd-9b0fd11be19c">
+                                        <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="35a29769-cf2e-45e7-b2f4-89a557881e0f">
+                                                <field name="NUM">100</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="19c8c973-2039-44b2-bd36-b8dce013d6a6">
+                                                        <field name="NUM">50</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
+                                <statement name="ELSE">
+                                    <block type="last_time" id="9fb652e9-d1f2-4a7a-8ef8-e3b5e83a5609">
+                                        <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="25271b89-aba2-4e15-8847-9e5ce672f955">
+                                                <field name="NUM">100</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="44d5017d-c8c0-474f-bdbe-214859257454">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
+                            </block>
+                        </statement>
+                        <statement name="ELSE">
+                            <block type="controls_if" id="abe84802-7d5b-4f41-8161-77cb196d4fcf">
+                                <value name="IF0">
+                                    <block type="logic_compare" id="68b14c30-7262-4971-a4d5-23466c806b9b">
+                                        <value name="A">
+                                            <block type="tracking_right" id="bf2fb766-c061-4e6a-a600-cebfaae6ebfe" />
+                                        </value>
+                                        <value name="B">
+                                            <block type="tracking_result" id="18943564-c486-4b1a-a032-1e802f7b20db">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                        <field name="OP">EQ</field>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="last_time" id="90e360a1-ba02-4a75-9b01-1f397150a123">
+                                        <field name="NUM">1</field>
+                                        <statement name="DO">
+                                            <block type="electrical_machinery_1" id="4b533ba1-fa70-45d4-b861-1ae93f34a56d">
+                                                <field name="NUM">100</field>
+                                                <next>
+                                                    <block type="electrical_machinery_2" id="e0430f75-1d3b-40dc-9888-bd27d5fc7603">
+                                                        <field name="NUM">0</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
                             </block>
                         </statement>
                     </block>

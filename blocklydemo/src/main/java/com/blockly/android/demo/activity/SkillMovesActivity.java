@@ -27,7 +27,7 @@ public class SkillMovesActivity extends AbstractBlocklyActivity {
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
             "turtle/blocks_electrical_machinery.json",
             "turtle/blocks_time.json",
-            "turtle/turtle_blocks.json"
+            "turtle/blocks_loop.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
             "turtle/generators_skillmoves.js"
@@ -38,12 +38,14 @@ public class SkillMovesActivity extends AbstractBlocklyActivity {
                 @Override
                 public void onFinishCodeGeneration(final String generatedCode) {
                     // Sample callback.
-                    Log.i(TAG, "generatedCode:" + generatedCode);
+                    Log.i(TAG, "generatedCode:\n" + generatedCode);
 
                     try {
                         String[] statements =generatedCode.split("\n");
                         JSONObject root = new JSONObject();
-                        JSONArray array = new JSONArray();
+                        JSONArray array = new JSONArray(
+
+                        );
                         root.put("array", array);
                         JSONObject item;
 
@@ -51,33 +53,9 @@ public class SkillMovesActivity extends AbstractBlocklyActivity {
                             String statement = statements[i];
                             i = parseStatement(statements, i, array).index;
                         }
-                        String msgStr = root.toString();
-//                        Message msgStart = new Message();
-//                        msgStart.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-//                        msgStart.obj = "start";
-//                        com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msgStart);
-//                        int end = 0;
-//                        int index = 1;
-////
-//                        for(int i=0; i< msgStr.length()-1; i=end) {
-//                            Message msg = new Message();
-//                            msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-//                            end = i + 63;
-//                            if(end > msgStr.length()-1)  {
-//                                end = msgStr.length()-1;
-//                            }
-//                            msg.obj = msgStr.substring(i, end);
-//
-////                        Toast.makeText(ForwardBackActivity.this, "length = "+ root.toString().length(), Toast.LENGTH_LONG).show();
-//                                    Log.e(TAG, (String)(msg.obj));
-//                            Log.e(TAG, "index = " + index);
-//                            com.blockly.android.demo.Constants.mClientThread.handler.sendMessageDelayed(msg, index*1000);
-//                            index++;
-//                        }
                         Message msg = new Message();
                         msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-//                        msg.obj = "<{\"array\":[{\"action\":\"electrical_machinery_2\",\"in\":200},{\"action\":\"delay\",\"time\":3},{\"action\":\"electrical_machinery_1\",\"in\":200},{\"action\":\"delay\",\"time\":3}]}>";
-                        msg.obj = "("+root.toString()+")";
+                        msg.obj = root.toString();
                         com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -113,8 +91,8 @@ public class SkillMovesActivity extends AbstractBlocklyActivity {
                 item.put("action", "electrical_machinery_2");
                 String[] strs = statement.split(":");
                 item.put("in", parseInt(strs[1]));
-            } else if (statement.contains("delay")) {
-                item.put("action", "delay");
+            } else if (statement.contains("last_time")) {
+                item.put("action", "last_time");
                 String[] strs = statement.split(":");
                 item.put("time", parseInt(strs[1]));
             }

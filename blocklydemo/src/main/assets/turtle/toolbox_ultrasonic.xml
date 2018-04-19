@@ -9,17 +9,16 @@
         <block type="controls_ifelse"></block>
         <block type="logic_compare"></block>
     </category>
-    <category name="循迹模块" colour="160">
-        <block type="tracking_left">
+    <category name="舵机" colour="160">
+        <block type="steering_engine">
             <field name="NUM">0</field>
         </block>
-        <block type="tracking_middle">
+    </category>
+    <category name="超声波模块" colour="160">
+        <block type="ultrasonic">
             <field name="NUM">0</field>
         </block>
-        <block type="tracking_right">
-            <field name="NUM">0</field>
-        </block>
-        <block type="tracking_result">
+        <block type="ultrasonic_result">
             <field name="NUM">0</field>
         </block>
     </category>
@@ -33,9 +32,6 @@
     </category>
     <category name="时间" colour="160">
         <block type="last_time">
-            <field name="NUM">1</field>
-        </block>
-        <block type="delay">
             <field name="NUM">1</field>
         </block>
     </category>

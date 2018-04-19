@@ -103,6 +103,14 @@
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
+            android:name=".activity.UltrasonicActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.BuzzActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
             android:name=".activity.IntroduceActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>

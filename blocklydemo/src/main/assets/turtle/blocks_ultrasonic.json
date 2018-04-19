@@ -1,0 +1,23 @@
+[
+  {
+    "type": "ultrasonic",
+    "message0": "超声波模块输出",
+    "colour": 260,
+    "output": null,
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "ultrasonic_result",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "NUM",
+        "text": "0"
+      }
+    ],
+    "colour": 260,
+    "output": "NUM",
+    "tooltip": "Returns the length of a list."
+  }
+]

@@ -26,7 +26,8 @@ public class SwingAroundActivity extends AbstractBlocklyActivity {
             "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_forward_back.js"
+            "turtle/generators_swing_around.js",
+            "turtle/generators.js"
     );
 
     private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
@@ -45,18 +46,13 @@ public class SwingAroundActivity extends AbstractBlocklyActivity {
                         int index = 0;
                         for(String statement : statements) {
                             item = new JSONObject();
-                            if(statement.contains("electrical_machinery_1")) {
-                                item.put("action", "electrical_machinery_1");
+                            if(statement.contains("steering_engine")) {
+                                item.put("action", "steering_engine");
                                 String[] strs = statement.split(":");
                                 item.put("in", Integer.parseInt(strs[1]));
                             }
-                            else if(statement.contains("electrical_machinery_2")) {
-                                item.put("action", "electrical_machinery_2");
-                                String[] strs = statement.split(":");
-                                item.put("in", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("delay")) {
-                                item.put("action", "delay");
+                            else if(statement.contains("last_time")) {
+                                item.put("action", "last_time");
                                 String[] strs = statement.split(":");
                                 item.put("time", Integer.parseInt(strs[1]));
                             }

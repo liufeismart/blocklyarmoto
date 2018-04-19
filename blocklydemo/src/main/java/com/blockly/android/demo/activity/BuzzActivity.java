@@ -22,10 +22,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by liufeismart on 18/1/19.
+ * Created by liufeismart on 2018/4/18.
+ * 嗡鸣器避障
  */
 
-public class LEDActivity extends AbstractBlocklyActivity {
+public class BuzzActivity  extends AbstractBlocklyActivity {
 
     public static final String TAG = "LEDActivity";
 

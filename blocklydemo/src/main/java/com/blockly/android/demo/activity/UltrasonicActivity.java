@@ -22,19 +22,24 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by liufeismart on 18/1/19.
+ * Created by liufeismart on 2018/4/18.
+ * 超生波避障
  */
 
-public class LEDActivity extends AbstractBlocklyActivity {
+public class UltrasonicActivity extends AbstractBlocklyActivity {
 
-    public static final String TAG = "LEDActivity";
-
+    private final String TAG = SwingAroundActivity.class.getSimpleName();
 
 
 
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
-            "turtle/light_blocks.json",
-            "turtle/blocks_time.json"
+            "turtle/blocks_ultrasonic.json",
+            "turtle/blocks_time.json",
+            "turtle/blocks_steering_engine.json",
+            "turtle/blocks_time.json",
+            "turtle/blocks_electrical_machinery.json",
+            "turtle/blocks_loop.json",
+            "turtle/blocks_logic.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
             "turtle/generators_bluetooth.js"
@@ -89,7 +94,7 @@ public class LEDActivity extends AbstractBlocklyActivity {
     @NonNull
     @Override
     protected String getToolboxContentsXmlPath() {
-        return "turtle/toolbox_bluetooth.xml";
+        return "turtle/toolbox_ultrasonic.xml";
     }
 
     @NonNull
@@ -166,3 +171,4 @@ public class LEDActivity extends AbstractBlocklyActivity {
 
 
 }
+

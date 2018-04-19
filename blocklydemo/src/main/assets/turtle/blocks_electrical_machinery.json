@@ -1,7 +1,7 @@
 [
   {
     "type": "electrical_machinery_1",
-    "message0": "向电机1输入 %1",
+    "message0": "设置电机1输入值为 %1",
     "args0": [
       {
         "type": "field_dropdown",
@@ -26,7 +26,7 @@
   },
   {
     "type": "electrical_machinery_2",
-    "message0": "向电机2输入 %1",
+    "message0": "设置电机2输入值为 %1",
     "args0": [
       {
         "type": "field_dropdown",

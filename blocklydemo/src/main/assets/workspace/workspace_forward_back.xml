@@ -1,31 +1,30 @@
-
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="electrical_machinery_1" id="8f08be2d-fb74-40ae-8620-48adfc3f99a7" x="237.0" y="79.0">
-    <field name="NUM">200</field>
-    <next>
-      <block type="electrical_machinery_2" id="64a61a66-8828-4a3d-bb42-92f837bab886">
-        <field name="NUM">200</field>
-        <next>
-          <block type="delay" id="94f9b3af-d7ee-473e-a525-70ed55667866">
-            <field name="NUM">3</field>
-            <next>
-              <block type="electrical_machinery_1" id="7f18ecd9-d3c2-4ee7-9d12-c172dd35054e">
-                <field name="NUM">-200</field>
+    <block type="last_time" id="9aa20873-8cbb-46f7-8948-80d15eda042c" x="280.0" y="23.0">
+        <field name="NUM">3</field>
+        <statement name="DO">
+            <block type="electrical_machinery_1" id="71addcb3-6297-4522-9ea1-768bbafae8bf">
+                <field name="NUM">200</field>
                 <next>
-                  <block type="electrical_machinery_2" id="f12e70db-6ac5-4a93-b3f1-9d9b38eaf8e7">
-                    <field name="NUM">-200</field>
-                    <next>
-                      <block type="delay" id="7cc2fe49-f726-467e-a63b-2166201c3a93">
-                        <field name="NUM">3</field>
-                      </block>
-                    </next>
-                  </block>
+                    <block type="electrical_machinery_2" id="87e4cdb1-6950-4829-9a7f-08b2a66a8e10">
+                        <field name="NUM">200</field>
+                    </block>
                 </next>
-              </block>
-            </next>
-          </block>
+            </block>
+        </statement>
+        <next>
+            <block type="last_time" id="7020f5a3-f7c4-423d-8432-1a6471a8225d">
+                <field name="NUM">3</field>
+                <statement name="DO">
+                    <block type="electrical_machinery_1" id="22dbf616-31c5-41e6-889a-2a0af7415bdf">
+                        <field name="NUM">-200</field>
+                        <next>
+                            <block type="electrical_machinery_2" id="5a56a481-15a3-4f3b-9580-a16c018017be">
+                                <field name="NUM">-200</field>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
         </next>
-      </block>
-    </next>
-  </block>
+    </block>
 </xml>

@@ -14,8 +14,6 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.google.blockly.model.DefaultBlocks.LOGIC_BLOCKS_PATH;
-
 /**
  * Created by liufeismart on 2018/3/23.
  */
@@ -26,11 +24,12 @@ public class FollowActivity extends AbstractBlocklyActivity {
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
             "turtle/blocks_electrical_machinery.json",
             "turtle/blocks_time.json",
-            LOGIC_BLOCKS_PATH,
-            "turtle/blocks_avoidance.json"
+            "turtle/blocks_logic.json",
+            "turtle/blocks_avoidance.json",
+            "turtle/blocks_loop.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_forward_back.js"
+            "turtle/generators_follow.js"
     );
 
     private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
@@ -38,7 +37,7 @@ public class FollowActivity extends AbstractBlocklyActivity {
                 @Override
                 public void onFinishCodeGeneration(final String generatedCode) {
                     // Sample callback.
-                    Log.i(TAG, "generatedCode:" + generatedCode);
+                    Log.i(TAG, "generatedCode:\n" + generatedCode);
 
                     try {
                         String[] statements =generatedCode.split("\n");
@@ -49,7 +48,44 @@ public class FollowActivity extends AbstractBlocklyActivity {
                         int index = 0;
                         for(String statement : statements) {
                             item = new JSONObject();
-                            if(statement.contains("electrical_machinery_1")) {
+                            if(statement.contains("repeat")) {
+                                item.put("action", "repeat");
+                                String[] strs = statement.split(":");
+                                item.put("in1", Integer.parseInt(strs[1]));
+                                item.put("in2", Integer.parseInt(strs[2]));
+                            }
+                            else if(statement.contains("if")) {
+                                item.put("action", "if");
+                                String[] strs = statement.split(":");
+                                item.put("in1", Integer.parseInt(strs[1]));
+                                item.put("in2", Integer.parseInt(strs[2]));
+                                if(strs.length>3) {
+                                    item.put("in3", Integer.parseInt(strs[3]));
+                                }
+                                else {
+                                    item.put("in3", 0);
+                                }
+
+                            }
+                            else if(statement.contains("logic_compare")) {
+                                item.put("action", "logic_compare");
+                                String[] strs = statement.split(":");
+                                item.put("in1", strs[1]);
+                                item.put("in2", Integer.parseInt(strs[2]));
+                                item.put("in3", Integer.parseInt(strs[3]));
+                            }
+                            else if(statement.contains("avoidance_left")) {
+                                item.put("action", "avoidance_left");
+                            }
+                            else if(statement.contains("avoidance_right")) {
+                                item.put("action", "avoidance_right");
+                            }
+                            else if(statement.contains("avoidance_result")) {
+                                item.put("action", "avoidance_result");
+                                String[] strs = statement.split(":");
+                                item.put("in", Integer.parseInt(strs[1]));
+                            }
+                            else if(statement.contains("electrical_machinery_1")) {
                                 item.put("action", "electrical_machinery_1");
                                 String[] strs = statement.split(":");
                                 item.put("in", Integer.parseInt(strs[1]));
@@ -59,8 +95,8 @@ public class FollowActivity extends AbstractBlocklyActivity {
                                 String[] strs = statement.split(":");
                                 item.put("in", Integer.parseInt(strs[1]));
                             }
-                            else if(statement.contains("delay")) {
-                                item.put("action", "delay");
+                            else if(statement.contains("last_time")) {
+                                item.put("action", "last_time");
                                 String[] strs = statement.split(":");
                                 item.put("time", Integer.parseInt(strs[1]));
                             }

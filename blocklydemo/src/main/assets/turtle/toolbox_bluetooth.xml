@@ -6,7 +6,7 @@
         <block type="light_down">
             <field name="VALUE">13</field>
         </block>
-        <block type="delay">
+        <block type="last_time">
             <field name="NUM">1</field>
         </block>
     </category>

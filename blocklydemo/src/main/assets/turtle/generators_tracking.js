@@ -9,6 +9,23 @@ Blockly.JavaScript['electrical_machinery_2'] = function(block) {
 };
 
 
+Blockly.JavaScript['tracking_result'] = function(block) {
+  var value = block.getFieldValue('NUM');
+  return 'tracking_result:' +value+"\n";
+};
+
+Blockly.JavaScript['tracking_right'] = function(block) {
+  return 'tracking_right'+"\n";
+};
+Blockly.JavaScript['tracking_middle'] = function(block) {
+  var value = block.getFieldValue('NUM');
+  return 'tracking_middle'+"\n";
+};
+Blockly.JavaScript['tracking_left'] = function(block) {
+  var value = block.getFieldValue('NUM');
+  return 'tracking_left'+"\n";
+};
+
 Blockly.JavaScript['turtle_repeat_internal'] = function(block) {
       var value1 = block.getFieldValue("TIMES");
       var value2 = Blockly.JavaScript.statementToCode(block,"DO");

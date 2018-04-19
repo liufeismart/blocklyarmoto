@@ -3,14 +3,14 @@
     "type": "avoidance_left",
     "message0": "左边的避障模块输出",
     "colour": 260,
-    "output": "NUM",
+    "output": null,
     "tooltip": "Returns the length of a list."
   },
   {
     "type": "avoidance_right",
     "message0": "右边的避障模块输出",
     "colour": 260,
-    "output": "NUM",
+    "output": null,
     "tooltip": "Returns the length of a list."
   },
   {

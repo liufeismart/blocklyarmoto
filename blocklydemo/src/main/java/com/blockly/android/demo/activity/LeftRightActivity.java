@@ -55,8 +55,8 @@ public class LeftRightActivity extends AbstractBlocklyActivity {
                                 String[] strs = statement.split(":");
                                 item.put("in", Integer.parseInt(strs[1]));
                             }
-                            else if(statement.contains("delay")) {
-                                item.put("action", "delay");
+                            else if(statement.contains("last_time")) {
+                                item.put("action", "last_time");
                                 String[] strs = statement.split(":");
                                 item.put("time", Integer.parseInt(strs[1]));
                             }

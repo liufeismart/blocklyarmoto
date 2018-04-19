@@ -31,13 +31,12 @@ import static com.blockly.android.demo.Constants.SCAN_RESULT;
  */
 
 public class LessonListActivity extends Activity {
-    //RecyclerView
+    /* RecyclerView */
     private RecyclerView rv_lessons;
     private RecyclerView.LayoutManager mLaoyutManager;
     private RecyclerView.Adapter mAdapter;
     private List<String> data_lessons;
 
-    //
     private TextView tv_bluetooth;
     private TextView tv_device_info;
 
@@ -46,8 +45,11 @@ public class LessonListActivity extends Activity {
     private String[] lesson_name = {"第一课\n总体介绍",
                         "第二课\n前进后退", "第三课\n左转右转",
                         "第四课\n花式动作", "第五课\n循迹",
-                        "第六课\n避障","第七课\n跟随",
-                        "第八课\n摇头晃脑"};
+                        "第六课\n红外避障","第七课\n红外跟随",
+                        "第八课\n摇头晃脑",
+                        "第九课\n超生波避障",
+                        "第十课\nLED灯",
+                        "第十一课\n嗡鸣器"};
 
     private Class[] jumpActivity = {IntroduceActivity.class,
             ForwardBackActivity.class,
@@ -56,7 +58,10 @@ public class LessonListActivity extends Activity {
             TrackingActivity.class,
             AvoidanceActivity.class,
             FollowActivity.class,
-            SwingAroundActivity.class};
+            SwingAroundActivity.class,
+            UltrasonicActivity.class,
+            LEDActivity.class,
+            BuzzActivity.class};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate");
@@ -148,7 +153,6 @@ public class LessonListActivity extends Activity {
 
         if(resultCode == RESULT_OK && requestCode == REQUEST_SCAN) {
             String result = data.getStringExtra(SCAN_RESULT);
-//            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
             Log.v(TAG, "result = " + result);
             Intent intent = new Intent();
             intent.setAction(ACTION_DEVICE_INFO);

@@ -2,13 +2,13 @@
     <block type="steering_engine" id="15b4dff2-5e2a-443c-ae56-93cecdbdb71d" x="112.0" y="66.0">
         <field name="NUM">120</field>
         <next>
-            <block type="delay" id="3ab5064e-f27f-4777-b623-1af9bae626ad">
+            <block type="last_time" id="3ab5064e-f27f-4777-b623-1af9bae626ad">
                 <field name="NUM">3</field>
                 <next>
                     <block type="steering_engine" id="e09a3c93-e799-43af-a406-be3a461610d7">
                         <field name="NUM">0</field>
                         <next>
-                            <block type="delay" id="1d51ba52-dd16-4aa6-97e5-a31bd0f8d3d3">
+                            <block type="last_time" id="1d51ba52-dd16-4aa6-97e5-a31bd0f8d3d3">
                                 <field name="NUM">1</field>
                                 <next>
                                     <block type="steering_engine" id="d36e9e3d-57e7-4624-b331-2f82a020bdb9">

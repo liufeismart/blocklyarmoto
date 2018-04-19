@@ -1,15 +1,10 @@
 package com.blockly.android.demo.activity;
 
-import android.os.Message;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
+import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,54 +22,57 @@ public class ForwardBackActivity extends AbstractBlocklyActivity {
             "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_forward_back.js"
+            "turtle/generators_forward_back.js",
+            "turtle/generators_time.js"
     );
+    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
 
-    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-            new CodeGenerationRequest.CodeGeneratorCallback() {
-                @Override
-                public void onFinishCodeGeneration(final String generatedCode) {
-                    // Sample callback.
-                    Log.i(TAG, "generatedCode:" + generatedCode);
-
-                    try {
-                        String[] statements =generatedCode.split("\n");
-                        JSONObject root = new JSONObject();
-                        JSONArray array = new JSONArray();
-                        root.put("array", array);
-                        JSONObject item;
-                        int index = 0;
-                        for(String statement : statements) {
-                            item = new JSONObject();
-                            if(statement.contains("electrical_machinery_1")) {
-                                item.put("action", "electrical_machinery_1");
-                                String[] strs = statement.split(":");
-                                item.put("in", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("electrical_machinery_2")) {
-                                item.put("action", "electrical_machinery_2");
-                                String[] strs = statement.split(":");
-                                item.put("in", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("delay")) {
-                                item.put("action", "delay");
-                                String[] strs = statement.split(":");
-                                item.put("time", Integer.parseInt(strs[1]));
-                            }
-                            array.put(item);
-                            index++;
-                        }
-                        Message msg = new Message();
-                        msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-                        msg.obj = root.toString();
-//                        Toast.makeText(ForwardBackActivity.this, "length = "+ root.toString().length(), Toast.LENGTH_LONG).show();
-                        Log.e(TAG, root.toString());
-                        com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
+//    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
+//            new CodeGenerationRequest.CodeGeneratorCallback() {
+//                @Override
+//                public void onFinishCodeGeneration(final String generatedCode) {
+//                    // Sample callback.
+//                    Log.i(TAG, "generatedCode:" + generatedCode);
+//
+//                    try {
+//                        List<String> statements =Arrays.asList(generatedCode.split("\n"));
+//                        JSONObject root = new JSONObject();
+//                        JSONArray array = new JSONArray();
+//                        root.put("array", array);
+//                        JSONObject item;
+//                        int index = 0;
+//                        for(String statement : statements) {
+//                            item = new JSONObject();
+//                            if(statement.contains("electrical_machinery_1")) {
+//                                item.put("action", "electrical_machinery_1");
+//                                String[] strs = statement.split(":");
+//                                item.put("in", Integer.parseInt(strs[1]));
+//                            }
+//                            else if(statement.contains("electrical_machinery_2")) {
+//                                item.put("action", "electrical_machinery_2");
+//                                String[] strs = statement.split(":");
+//                                item.put("in", Integer.parseInt(strs[1]));
+//                            }
+//                            else if(statement.contains("last_time")) {
+//                                item.put("action", "last_time");
+//                                String[] strs = statement.split(":");
+//                                item.put("in1", Integer.parseInt(strs[1]));
+//                                item.put("in2", Integer.parseInt(strs[2]));
+//                            }
+//                            array.put(item);
+//                            index++;
+//                        }
+//                        Message msg = new Message();
+//                        msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
+//                        msg.obj = root.toString();
+////                        Toast.makeText(ForwardBackActivity.this, "length = "+ root.toString().length(), Toast.LENGTH_LONG).show();
+//                        Log.e(TAG, root.toString());
+//                        com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            };
 
     @NonNull
     @Override
