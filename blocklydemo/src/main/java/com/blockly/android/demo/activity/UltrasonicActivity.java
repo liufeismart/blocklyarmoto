@@ -39,12 +39,6 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
             "turtle/blocks_time.json",
             "turtle/blocks_electrical_machinery.json",
             "turtle/blocks_loop.json",
-<<<<<<< HEAD
-            "turtle/blocks_logic.json"
-    );
-    static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_bluetooth.js"
-=======
             "turtle/blocks_logic.json",
             "turtle/blocks_variate.json"
 
@@ -54,7 +48,6 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
             "turtle/generators_ultrasonic.js",
             "turtle/generators_time",
             "turtle/generators_time"
->>>>>>> test
     );
 
     private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
@@ -180,13 +173,10 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
     }
 
 
-<<<<<<< HEAD
-=======
     @Override
     protected String getWorkspaceAutosavePath() {
         return "workspace/workspace_ultrasonic.xml";
     }
->>>>>>> test
 
 
 }

@@ -51,10 +51,10 @@
                                         <field name="NUM">1</field>
                                         <statement name="DO">
                                             <block type="electrical_machinery_1" id="4f0d8fa6-e68e-4de2-87b3-e953373ad624">
-                                                <field name="NUM">100</field>
+                                                <field name="NUM">200</field>
                                                 <next>
                                                     <block type="electrical_machinery_2" id="52f9fa6a-7573-46e3-b533-e63279791860">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">200</field>
                                                     </block>
                                                 </next>
                                             </block>
@@ -66,10 +66,10 @@
                                         <field name="NUM">1</field>
                                         <statement name="DO">
                                             <block type="electrical_machinery_1" id="8869ae9c-523d-48dd-a528-0c4544e7a6a5">
-                                                <field name="NUM">50</field>
+                                                <field name="NUM">100</field>
                                                 <next>
                                                     <block type="electrical_machinery_2" id="f918e668-9315-401e-babb-70b9a82f72f7">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">200</field>
                                                     </block>
                                                 </next>
                                             </block>
@@ -101,7 +101,7 @@
                                                 <field name="NUM">0</field>
                                                 <next>
                                                     <block type="electrical_machinery_2" id="00ee05e0-8f6c-4bac-81ea-d5f4a133542a">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">200</field>
                                                     </block>
                                                 </next>
                                             </block>
@@ -147,10 +147,10 @@
                                         <field name="NUM">1</field>
                                         <statement name="DO">
                                             <block type="electrical_machinery_1" id="35a29769-cf2e-45e7-b2f4-89a557881e0f">
-                                                <field name="NUM">100</field>
+                                                <field name="NUM">200</field>
                                                 <next>
                                                     <block type="electrical_machinery_2" id="19c8c973-2039-44b2-bd36-b8dce013d6a6">
-                                                        <field name="NUM">50</field>
+                                                        <field name="NUM">100</field>
                                                     </block>
                                                 </next>
                                             </block>
@@ -162,10 +162,10 @@
                                         <field name="NUM">1</field>
                                         <statement name="DO">
                                             <block type="electrical_machinery_1" id="25271b89-aba2-4e15-8847-9e5ce672f955">
-                                                <field name="NUM">100</field>
+                                                <field name="NUM">200</field>
                                                 <next>
                                                     <block type="electrical_machinery_2" id="44d5017d-c8c0-474f-bdbe-214859257454">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">200</field>
                                                     </block>
                                                 </next>
                                             </block>

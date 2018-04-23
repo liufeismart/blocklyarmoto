@@ -33,33 +33,33 @@
                             </block>
                         </value>
                         <statement name="DO0">
-                            <block type="electrical_machinery_1" id="41b12df5-4232-4c52-b18d-546a9ce9a621">
-                                <field name="NUM">-100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="3bc8b38f-a065-4726-a686-144036f71915">
-                                        <field name="NUM">-100</field>
+                            <block type="last_time" id="cd1f743f-d48b-42a7-bceb-bef578c61a53">
+                                <field name="NUM">1</field>
+                                <statement name="DO">
+                                    <block type="electrical_machinery_1" id="41b12df5-4232-4c52-b18d-546a9ce9a621">
+                                        <field name="NUM">-200</field>
                                         <next>
-                                            <block type="last_time" id="cd1f743f-d48b-42a7-bceb-bef578c61a53">
-                                                <field name="NUM">1</field>
+                                            <block type="electrical_machinery_2" id="3bc8b38f-a065-4726-a686-144036f71915">
+                                                <field name="NUM">-200</field>
                                             </block>
                                         </next>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </statement>
                         <statement name="ELSE">
-                            <block type="electrical_machinery_1" id="7a1a7d89-2d2e-443d-9d5a-cc253af57d26">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="c71164f2-32c0-4e20-a86b-3ec6549fa0f0">
-                                        <field name="NUM">0</field>
+                            <block type="last_time" id="cb3482c3-36a9-4327-88db-3c8efdce5201">
+                                <field name="NUM">1</field>
+                                <statement name="DO">
+                                    <block type="electrical_machinery_1" id="7a1a7d89-2d2e-443d-9d5a-cc253af57d26">
+                                        <field name="NUM">200</field>
                                         <next>
-                                            <block type="last_time" id="cb3482c3-36a9-4327-88db-3c8efdce5201">
-                                                <field name="NUM">1</field>
+                                            <block type="electrical_machinery_2" id="c71164f2-32c0-4e20-a86b-3ec6549fa0f0">
+                                                <field name="NUM">0</field>
                                             </block>
                                         </next>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </statement>
                     </block>
@@ -80,33 +80,33 @@
                             </block>
                         </value>
                         <statement name="DO0">
-                            <block type="electrical_machinery_1" id="a9cc3880-c36e-403f-874a-aacaf1f6f510">
-                                <field name="NUM">0</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="6564b53c-420a-4e85-a2e6-b87f00366c3a">
-                                        <field name="NUM">100</field>
+                            <block type="last_time" id="19c90e48-870a-4ddc-ab8b-fda818329c9e">
+                                <field name="NUM">1</field>
+                                <statement name="DO">
+                                    <block type="electrical_machinery_1" id="a9cc3880-c36e-403f-874a-aacaf1f6f510">
+                                        <field name="NUM">0</field>
                                         <next>
-                                            <block type="last_time" id="19c90e48-870a-4ddc-ab8b-fda818329c9e">
-                                                <field name="NUM">1</field>
+                                            <block type="electrical_machinery_2" id="6564b53c-420a-4e85-a2e6-b87f00366c3a">
+                                                <field name="NUM">200</field>
                                             </block>
                                         </next>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </statement>
                         <statement name="ELSE">
-                            <block type="electrical_machinery_1" id="0b5c7ded-9947-4a75-8930-7813d1544edd">
-                                <field name="NUM">100</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="5ae11d71-83ce-41fb-85d9-33741cedde45">
-                                        <field name="NUM">100</field>
+                            <block type="last_time" id="0525dc27-dddc-4c1e-bfd5-ff371818338c">
+                                <field name="NUM">1</field>
+                                <statement name="DO">
+                                    <block type="electrical_machinery_1" id="0b5c7ded-9947-4a75-8930-7813d1544edd">
+                                        <field name="NUM">200</field>
                                         <next>
-                                            <block type="last_time" id="0525dc27-dddc-4c1e-bfd5-ff371818338c">
-                                                <field name="NUM">1</field>
+                                            <block type="electrical_machinery_2" id="5ae11d71-83ce-41fb-85d9-33741cedde45">
+                                                <field name="NUM">200</field>
                                             </block>
                                         </next>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </statement>
                     </block>
