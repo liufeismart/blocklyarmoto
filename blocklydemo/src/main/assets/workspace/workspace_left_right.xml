@@ -1,4 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
+<<<<<<< HEAD
     <block type="electrical_machinery_2" id="64a61a66-8828-4a3d-bb42-92f837bab886" x="291.0" y="231.0">
         <field name="NUM">200</field>
         <next>
@@ -18,3 +19,24 @@
         </next>
     </block>
 </xml>
+=======
+    <block type="last_time" id="f9417a74-75fd-4c2d-8e85-2ee5ce9ce758" x="302.0" y="242.0">
+        <field name="NUM">3</field>
+        <statement name="DO">
+            <block type="electrical_machinery_2" id="64a61a66-8828-4a3d-bb42-92f837bab886">
+                <field name="NUM">200</field>
+            </block>
+        </statement>
+        <next>
+            <block type="last_time" id="94f9b3af-d7ee-473e-a525-70ed55667866">
+                <field name="NUM">3</field>
+                <statement name="DO">
+                    <block type="electrical_machinery_1" id="67ce2f42-e5a9-474d-9fe4-79de4ee63b9a">
+                        <field name="NUM">200</field>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+</xml>
+>>>>>>> test

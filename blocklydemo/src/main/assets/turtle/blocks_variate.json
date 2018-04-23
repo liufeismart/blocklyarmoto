@@ -1,0 +1,42 @@
+[
+  {
+    "type": "variate_front_distance",
+    "message0": "前方距离",
+    "colour": 260,
+    "output": null,
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "variate_left_distance",
+    "message0": "左边距离",
+    "colour": 260,
+    "output": null,
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "variate_right_distance",
+    "message0": "左边距离",
+    "colour": 260,
+    "output": null,
+    "tooltip": "Returns the length of a list."
+  },
+  {
+    "type": "variate_set",
+    "message0": "%1 = %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A"
+      },
+      {
+        "type": "input_value",
+        "name": "B"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 210,
+    "tooltip": "",
+    "helpUrl": "https://en.wikipedia.org/wiki/Equality_(mathematics)"
+  }
+]

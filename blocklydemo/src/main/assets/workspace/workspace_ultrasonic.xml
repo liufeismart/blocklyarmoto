@@ -1,0 +1,213 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_repeat_internal" id="2f0ff596-b0db-4bc6-bacb-56545444eeb4" x="90.0" y="3.0">
+        <field name="TIMES">-1</field>
+        <statement name="DO">
+            <block type="steering_engine" id="9594bace-3336-4730-bd35-039e1cf4098e">
+                <field name="NUM">90</field>
+                <next>
+                    <block type="variate_set" id="1605ece5-4432-40f9-bf4a-b772494dc3ea">
+                        <value name="A">
+                            <block type="variate_front_direction" id="1a46b706-3007-49b5-80a5-4da297c1987b" />
+                        </value>
+                        <value name="B">
+                            <block type="ultrasonic" id="b76ba358-160a-4d73-b562-1ab3a4c7dc3f" />
+                        </value>
+                        <next>
+                            <block type="steering_engine" id="04a51216-dbc3-4bd1-8824-573ae9d8bd84">
+                                <field name="NUM">0</field>
+                                <next>
+                                    <block type="variate_set" id="cc985602-732a-4cf1-9dc6-d6f8c61e896b">
+                                        <value name="A">
+                                            <block type="variate_left_direction" id="a975205f-3bc0-427d-a585-30f52c9a944d" />
+                                        </value>
+                                        <value name="B">
+                                            <block type="ultrasonic" id="8d291c56-826a-45b5-a319-182ea8e22ff2" />
+                                        </value>
+                                        <next>
+                                            <block type="steering_engine" id="16d7eb11-9f60-40bb-ba69-9c90b34c83e6">
+                                                <field name="NUM">180</field>
+                                                <next>
+                                                    <block type="variate_set" id="b449605d-118b-49be-bf18-7ea6e58f536d">
+                                                        <value name="A">
+                                                            <block type="variate_right_direction" id="137bcdf5-a7e1-4fd8-9856-4de0db1d752f" />
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="ultrasonic" id="39d33d33-296f-41b2-b2f3-4a60ee529ead" />
+                                                        </value>
+                                                        <next>
+                                                            <block type="controls_if" id="e12b83c3-d818-43cc-8a1d-61f54f432ae7">
+                                                                <value name="IF0">
+                                                                    <block type="logic_compare" id="91399301-69a9-41f6-a223-a6e247e1a11c">
+                                                                        <value name="A">
+                                                                            <block type="variate_front_direction" id="dba5f019-144e-4b2f-ae9d-ef35e937cab6" />
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="variate_result" id="418bfa38-1757-49d9-951b-7b543dff2c8f">
+                                                                                <field name="NUM">15</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <field name="OP">VA</field>
+                                                                    </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                    <block type="last_time" id="a2bd096a-2b18-4912-a14e-0da04241d496">
+                                                                        <field name="NUM">1</field>
+                                                                        <statement name="DO">
+                                                                            <block type="electrical_machinery_1" id="8d787ca2-8008-4935-97c0-2479e8934063">
+                                                                                <field name="NUM">-200</field>
+                                                                                <next>
+                                                                                    <block type="electrical_machinery_2" id="e1ad02e6-4e17-4e0a-8dc6-01a8d3ae8777">
+                                                                                        <field name="NUM">-200</field>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                    </block>
+                                                                </statement>
+                                                                <next>
+                                                                    <block type="controls_ifelse" id="45ce50ed-aae3-45f4-a8d3-c5d2a7fb5aef">
+                                                                        <value name="IF0">
+                                                                            <block type="logic_compare" id="2c911288-1630-48d3-9d65-0a772cce5e47">
+                                                                                <value name="A">
+                                                                                    <block type="variate_front_direction" id="2e1eb2c7-ff04-4f51-aa98-384ec923919e" />
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="variate_result" id="989139e7-ae68-41d8-a847-429ebcb9b180">
+                                                                                        <field name="NUM">30</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <field name="OP">VA</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                            <block type="controls_ifelse" id="0b7ef8c5-7fa3-4854-beca-4d41b695a7c6">
+                                                                                <value name="IF0">
+                                                                                    <block type="logic_compare" id="eaa04ed8-5e66-4dea-9647-2765f4ddc031">
+                                                                                        <value name="A">
+                                                                                            <block type="variate_left_direction" id="2dbb0f43-9a84-4da7-8cb1-bdefae7994c5" />
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variate_right_direction" id="de981970-cf70-4f8e-ab5a-8d40e6645193" />
+                                                                                        </value>
+                                                                                        <field name="OP">GTR</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                    <block type="controls_ifelse" id="6086ae7f-110a-4025-b31b-e60be4876901">
+                                                                                        <value name="IF0">
+                                                                                            <block type="logic_compare" id="25fa597d-85da-4ed4-b504-b8da69dd4e61">
+                                                                                                <value name="A">
+                                                                                                    <block type="variate_left_direction" id="9423f1c1-77dc-49df-907e-a5705a84388f" />
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                    <block type="variate_result" id="ce846df2-ddac-443e-af00-4e0d2cb61ad0">
+                                                                                                        <field name="NUM">20</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <field name="OP">VA</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO0">
+                                                                                            <block type="last_time" id="32b5afe3-9d05-4044-af05-3bb45ff04e63">
+                                                                                                <field name="NUM">1</field>
+                                                                                                <statement name="DO">
+                                                                                                    <block type="electrical_machinery_1" id="138e4af2-6bf1-46d8-af8a-fde8edebbbb6">
+                                                                                                        <field name="NUM">-200</field>
+                                                                                                        <next>
+                                                                                                            <block type="electrical_machinery_2" id="ed786384-fd6a-417b-983e-0d268a1dcc7a">
+                                                                                                                <field name="NUM">-200</field>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </statement>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                        <statement name="ELSE">
+                                                                                            <block type="last_time" id="814b8860-530c-487b-87fd-42aa4bd2d9dd">
+                                                                                                <field name="NUM">1</field>
+                                                                                                <statement name="DO">
+                                                                                                    <block type="electrical_machinery_2" id="45c81cf4-6f9d-47ff-8740-7a88c805960a">
+                                                                                                        <field name="NUM">200</field>
+                                                                                                    </block>
+                                                                                                </statement>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                    </block>
+                                                                                </statement>
+                                                                                <statement name="ELSE">
+                                                                                    <block type="controls_ifelse" id="e21eefe5-14c0-4213-adb7-322c8d8296e4">
+                                                                                        <value name="IF0">
+                                                                                            <block type="logic_compare" id="466635e7-b4cc-4789-9ea2-2ba909f11b93">
+                                                                                                <value name="A">
+                                                                                                    <block type="variate_left_direction" id="9b86e0a7-7ef9-49d4-9155-ec1d0b248826" />
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                    <block type="variate_result" id="5deb838f-189f-48ce-bd0d-a346d3e11fb7">
+                                                                                                        <field name="NUM">20</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <field name="OP">VA</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO0">
+                                                                                            <block type="last_time" id="7ef791e2-0b13-4c82-abf3-97e19b57799f">
+                                                                                                <field name="NUM">1</field>
+                                                                                                <statement name="DO">
+                                                                                                    <block type="electrical_machinery_1" id="6655ed1a-cdbd-45f4-a2d1-4b7d27d0ff3c">
+                                                                                                        <field name="NUM">-200</field>
+                                                                                                        <next>
+                                                                                                            <block type="electrical_machinery_2" id="6ae1ac33-4f99-42f6-9905-d9beabe82bfb">
+                                                                                                                <field name="NUM">-200</field>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </statement>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                        <statement name="ELSE">
+                                                                                            <block type="last_time" id="22e7db93-c503-4ac7-ab6f-03e87a4634e9">
+                                                                                                <field name="NUM">1</field>
+                                                                                                <statement name="DO">
+                                                                                                    <block type="electrical_machinery_1" id="6252a31a-df3a-4947-85ea-6634e510bd44">
+                                                                                                        <field name="NUM">200</field>
+                                                                                                    </block>
+                                                                                                </statement>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                    </block>
+                                                                                </statement>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <statement name="ELSE">
+                                                                            <block type="last_time" id="51c81466-5b0f-43ac-9569-93e610992dae">
+                                                                                <field name="NUM">1</field>
+                                                                                <statement name="DO">
+                                                                                    <block type="electrical_machinery_1" id="07380b31-f384-48cb-8f6e-bc252676b606">
+                                                                                        <field name="NUM">200</field>
+                                                                                        <next>
+                                                                                            <block type="electrical_machinery_2" id="1bc1b896-6e89-493c-8c74-94d5d8a6b781">
+                                                                                                <field name="NUM">200</field>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </statement>
+                                                                            </block>
+                                                                        </statement>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>
