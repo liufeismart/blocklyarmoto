@@ -35,4 +35,16 @@
             <field name="NUM">1</field>
         </block>
     </category>
+    <category name="变量" colour="160">
+        <block type="variate_front_direction">
+            <field name="NUM">0</field>
+        </block>
+        <block type="variate_left_direction">
+            <field name="NUM">0</field>
+        </block>
+        <block type="variate_right_direction">
+            <field name="NUM">0</field>
+        </block>
+        <block type="variate_set"></block>
+    </category>
 </toolbox>

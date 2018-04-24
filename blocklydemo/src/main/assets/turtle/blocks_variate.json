@@ -1,20 +1,20 @@
 [
   {
-    "type": "variate_front_distance",
+    "type": "variate_front_direction",
     "message0": "前方距离",
     "colour": 260,
     "output": null,
     "tooltip": "Returns the length of a list."
   },
   {
-    "type": "variate_left_distance",
+    "type": "variate_left_direction",
     "message0": "左边距离",
     "colour": 260,
     "output": null,
     "tooltip": "Returns the length of a list."
   },
   {
-    "type": "variate_right_distance",
+    "type": "variate_right_direction",
     "message0": "左边距离",
     "colour": 260,
     "output": null,
@@ -34,9 +34,10 @@
       }
     ],
     "inputsInline": true,
-    "output": "Boolean",
     "colour": 210,
     "tooltip": "",
+    "previousStatement": null,
+    "nextStatement": null,
     "helpUrl": "https://en.wikipedia.org/wiki/Equality_(mathematics)"
   }
 ]

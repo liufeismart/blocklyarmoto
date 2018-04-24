@@ -35,8 +35,5 @@
         <block type="last_time">
             <field name="NUM">1</field>
         </block>
-        <block type="delay">
-            <field name="NUM">1</field>
-        </block>
     </category>
 </toolbox>

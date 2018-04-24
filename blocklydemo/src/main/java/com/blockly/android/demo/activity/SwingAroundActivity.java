@@ -4,6 +4,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
@@ -29,47 +30,9 @@ public class SwingAroundActivity extends AbstractBlocklyActivity {
             "turtle/generators_swing_around.js",
             "turtle/generators.js"
     );
+    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
 
-    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-            new CodeGenerationRequest.CodeGeneratorCallback() {
-                @Override
-                public void onFinishCodeGeneration(final String generatedCode) {
-                    // Sample callback.
-                    Log.i(TAG, "generatedCode:" + generatedCode);
 
-                    try {
-                        String[] statements =generatedCode.split("\n");
-                        JSONObject root = new JSONObject();
-                        JSONArray array = new JSONArray();
-                        root.put("array", array);
-                        JSONObject item;
-                        int index = 0;
-                        for(String statement : statements) {
-                            item = new JSONObject();
-                            if(statement.contains("steering_engine")) {
-                                item.put("action", "steering_engine");
-                                String[] strs = statement.split(":");
-                                item.put("in", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("last_time")) {
-                                item.put("action", "last_time");
-                                String[] strs = statement.split(":");
-                                item.put("time", Integer.parseInt(strs[1]));
-                            }
-                            array.put(item);
-                            index++;
-                        }
-                        Message msg = new Message();
-                        msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-                        msg.obj = root.toString();
-//                        Toast.makeText(ForwardBackActivity.this, "length = "+ root.toString().length(), Toast.LENGTH_LONG).show();
-                        Log.e(TAG, root.toString());
-                        com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
 
     @NonNull
     @Override

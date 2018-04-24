@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
+import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
@@ -50,51 +51,8 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
             "turtle/generators_time"
     );
 
-    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-            new CodeGenerationRequest.CodeGeneratorCallback() {
-                @Override
-                public void onFinishCodeGeneration(final String generatedCode) {
-                    // Sample callback.
-                    Log.i(TAG, "generatedCode:" + generatedCode);
+    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
 
-                    try {
-                        String[] statements =generatedCode.split("\n");
-                        JSONObject root = new JSONObject();
-                        JSONArray array = new JSONArray();
-                        root.put("array", array);
-                        JSONObject item;
-                        int index = 0;
-                        for(String statement : statements) {
-                            item = new JSONObject();
-                            if(statement.contains("Light.lightUp")) {
-                                item.put("action", "lightUp");
-                                String[] strs = statement.split(":");
-                                item.put("pin", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("Light.lightdown")) {
-                                item.put("action", "lightDown");
-                                String[] strs = statement.split(":");
-                                item.put("pin", Integer.parseInt(strs[1]));
-                            }
-                            else if(statement.contains("last_time")) {
-                                item.put("action", "last_time");
-                                String[] strs = statement.split(":");
-                                item.put("time", Integer.parseInt(strs[1]));
-                            }
-                            array.put(item);
-                            index++;
-                        }
-                        Message msg = new Message();
-                        msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
-                        msg.obj = root.toString();
-//                        Toast.makeText(LEDActivity.this, "length = "+ root.toString().length(), Toast.LENGTH_LONG).show();
-                        Log.e(TAG, root.toString());
-                        com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
 
     @NonNull
     @Override

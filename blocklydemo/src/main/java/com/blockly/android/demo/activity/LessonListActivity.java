@@ -47,7 +47,7 @@ public class LessonListActivity extends Activity {
                         "第四课\n花式动作", "第五课\n循迹",
                         "第六课\n红外避障","第七课\n红外跟随",
                         "第八课\n摇头晃脑",
-                        "第九课\n超生波避障",
+                        "第九课\n超声波避障",
                         "第十课\nLED灯",
                         "第十一课\n嗡鸣器"};
 

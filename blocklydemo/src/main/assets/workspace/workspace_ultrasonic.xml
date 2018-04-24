@@ -42,7 +42,7 @@
                                                                             <block type="variate_front_direction" id="dba5f019-144e-4b2f-ae9d-ef35e937cab6" />
                                                                         </value>
                                                                         <value name="B">
-                                                                            <block type="variate_result" id="418bfa38-1757-49d9-951b-7b543dff2c8f">
+                                                                            <block type="ultrasonic_result" id="418bfa38-1757-49d9-951b-7b543dff2c8f">
                                                                                 <field name="NUM">15</field>
                                                                             </block>
                                                                         </value>
@@ -72,7 +72,7 @@
                                                                                     <block type="variate_front_direction" id="2e1eb2c7-ff04-4f51-aa98-384ec923919e" />
                                                                                 </value>
                                                                                 <value name="B">
-                                                                                    <block type="variate_result" id="989139e7-ae68-41d8-a847-429ebcb9b180">
+                                                                                    <block type="ultrasonic_result" id="989139e7-ae68-41d8-a847-429ebcb9b180">
                                                                                         <field name="NUM">30</field>
                                                                                     </block>
                                                                                 </value>
@@ -100,7 +100,7 @@
                                                                                                     <block type="variate_left_direction" id="9423f1c1-77dc-49df-907e-a5705a84388f" />
                                                                                                 </value>
                                                                                                 <value name="B">
-                                                                                                    <block type="variate_result" id="ce846df2-ddac-443e-af00-4e0d2cb61ad0">
+                                                                                                    <block type="ultrasonic_result" id="ce846df2-ddac-443e-af00-4e0d2cb61ad0">
                                                                                                         <field name="NUM">20</field>
                                                                                                     </block>
                                                                                                 </value>
@@ -142,7 +142,7 @@
                                                                                                     <block type="variate_left_direction" id="9b86e0a7-7ef9-49d4-9155-ec1d0b248826" />
                                                                                                 </value>
                                                                                                 <value name="B">
-                                                                                                    <block type="variate_result" id="5deb838f-189f-48ce-bd0d-a346d3e11fb7">
+                                                                                                    <block type="ultrasonic_result" id="5deb838f-189f-48ce-bd0d-a346d3e11fb7">
                                                                                                         <field name="NUM">20</field>
                                                                                                     </block>
                                                                                                 </value>

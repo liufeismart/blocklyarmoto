@@ -48,13 +48,18 @@
                             </block>
                         </statement>
                         <next>
-                            <block type="electrical_machinery_1" id="5469c9df-d8f3-438e-954d-7c48ff9d92c9">
-                                <field name="NUM">-200</field>
-                                <next>
-                                    <block type="electrical_machinery_2" id="c35293c2-c942-4f0a-a037-da889a9a3c63">
+                            <block type="last_time" id="fa2152e1-4a5f-41a6-9b6e-30702a9928e9">
+                                <field name="NUM">3</field>
+                                <statement name="DO">
+                                    <block type="electrical_machinery_1" id="5469c9df-d8f3-438e-954d-7c48ff9d92c9">
                                         <field name="NUM">-200</field>
+                                        <next>
+                                            <block type="electrical_machinery_2" id="c35293c2-c942-4f0a-a037-da889a9a3c63">
+                                                <field name="NUM">-200</field>
+                                            </block>
+                                        </next>
                                     </block>
-                                </next>
+                                </statement>
                             </block>
                         </next>
                     </block>

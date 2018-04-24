@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.blockly.android.demo.Constants.MSG_BLUETOOTH_CONNECT_FAIL;
@@ -40,6 +41,7 @@ public class ClientThread extends HandlerThread {
     private static Object lock = new Object();
     private boolean isRun;
     private List<Integer> record_execute = new ArrayList<>();
+    private HashMap<String, Integer>  map_variate = new HashMap<>();
 
     public ClientThread(final BluetoothActivity activity, BluetoothDevice bluetoothDevice) {
         super("Hanler");
@@ -210,7 +212,28 @@ public class ClientThread extends HandlerThread {
                     uploadStatement(out, objStr, in);
                 }
             }
-        } else {
+        }
+        else if(action.equals("variate_set")) {
+            int in1 = obj.getInt("in1");
+            int in2 = obj.getInt("in2");
+            if(in1 == 1) {
+                i++;
+                JSONObject obj_variate = array.getJSONObject(i);
+                if("variate".equals(obj_variate.getString("action"))) {
+                    i++;
+                    int count_set_in2 = i+in2;
+                    Result_Compare result_set_in2 = null;
+                    for(; i<count_set_in2; i++) {
+                        JSONObject obj_cp_in3 = array.getJSONObject(i);
+                        result_set_in2 = parseCompare(obj_cp_in3, array, i, out, in);
+                    }
+                    map_variate.put(obj_variate.getString("in"), Integer.parseInt(result_set_in2.result));
+                    return new Result_Statement(count, i);
+                }
+            }
+            i = i+ in1+in2;
+        }
+        else {
             String objStr = obj.toString();
             Log.e(BluetoothActivity.TAG, "index = " + i);
             uploadStatement(out, objStr, in);
@@ -221,6 +244,8 @@ public class ClientThread extends HandlerThread {
         }
         return new Result_Statement(count, i);
     }
+
+
 
     private Result_Compare parseCompare(JSONObject obj, JSONArray array, int i,
                                         OutputStream out,
@@ -277,13 +302,13 @@ public class ClientThread extends HandlerThread {
                 action.equals("tracking_left") ||
                 action.equals("tracking_middle") ||
                 action.equals("avoidance_left") ||
-                action.equals("avoidance_right")) {
+                action.equals("avoidance_right") ||
+                action.equals("ultrasonic")) {
             String result = uploadStatement(out, obj.toString(), in);
             return new Result_Compare(result,i);
-        } else if(action.equals("tracking_result")) {
-            return new Result_Compare(String.valueOf(obj.getInt("in")),i);
-        }
-        else if(action.equals("avoidance_result")) {
+        } else if(action.equals("tracking_result") ||
+                action.equals("avoidance_result") ||
+                action.equals("ultrasonic_result")) {
             return new Result_Compare(String.valueOf(obj.getInt("in")),i);
         }
         return null;
