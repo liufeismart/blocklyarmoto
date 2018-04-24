@@ -4,9 +4,5 @@ Blockly.JavaScript['last_time'] = function(block) {
   var doStr = Blockly.JavaScript.statementToCode(block,"DO");
   var statements1 = doStr.split('\n');
   var c = "last_time:"+value+":"+(statements1.length-1);
-  return doStr+ c+'\n';
-};
-Blockly.JavaScript['delay'] = function(block) {
-  var value = block.getFieldValue('NUM');
-        return 'delay:' +value+'\n';
+  return c+'\n'+doStr;
 };

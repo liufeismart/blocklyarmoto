@@ -170,7 +170,16 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
             } else if (statement.contains("last_time")) {
                 item.put("action", "last_time");
                 String[] strs = statement.split(":");
-                item.put("time", parseInt(strs[1]));
+                item.put("in1", parseInt(strs[1]));
+                item.put("in2", parseInt(strs[2]));
+                i++;
+                for(int j=0; j< parseInt(strs[2]); j++) {
+                    JSONObject item_temp = new JSONObject();
+                    parseStatement(statements, i+j, array);
+                }
+                array.put(item);
+                i++;
+                return new Bean(item, i);
             }
             array.put(item);
             i++;

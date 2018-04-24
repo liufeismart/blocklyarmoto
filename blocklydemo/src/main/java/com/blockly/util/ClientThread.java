@@ -202,8 +202,9 @@ public class ClientThread extends HandlerThread {
             obj_delay.put("time", 3);
             String objStr = obj_delay.toString();
             uploadStatement(out, objStr, in);
-            for(int index= record_execute.size()-1; index>= (i-in2); index--) {
-                JSONObject obj_execute = array.getJSONObject(record_execute.get(index));
+            int length = record_execute.size()-1;
+            for(int index= 0; index<in2; index++) {
+                JSONObject obj_execute = array.getJSONObject(record_execute.get(length-index));
                 String action_execute  = obj_execute.getString("action");
                 if("electrical_machinery_1".equals(action_execute) ||
                         "electrical_machinery_2".equals(action_execute)) {

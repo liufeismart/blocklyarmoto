@@ -1,16 +1,10 @@
 package com.blockly.android.demo.activity;
 
-import android.os.Message;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +21,8 @@ public class LeftRightActivity extends AbstractBlocklyActivity {
             "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_forward_back.js"
+            "turtle/generators_forward_back.js",
+            "turtle/generators_time.js"
     );
 
     private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);

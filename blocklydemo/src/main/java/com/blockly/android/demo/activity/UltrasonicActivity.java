@@ -4,20 +4,14 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 
 import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +41,6 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
             "turtle/generators_variate.js",
             "turtle/generators_ultrasonic.js",
-            "turtle/generators_time",
             "turtle/generators_time"
     );
 
