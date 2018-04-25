@@ -1,16 +1,10 @@
 package com.blockly.android.demo.activity;
 
-import android.os.Message;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,14 +17,17 @@ public class TrackingActivity extends AbstractBlocklyActivity {
     private final String TAG = TrackingActivity.class.getSimpleName();
 
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
-            "turtle/blocks_electrical_machinery.json",
-            "turtle/blocks_time.json",
+            "turtle/blocks_loop.json",
             "turtle/blocks_logic.json",
             "turtle/blocks_tracking.json",
-            "turtle/blocks_loop.json"
+            "turtle/blocks_electrical_machinery.json",
+            "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_follow.js",
+            "turtle/generators_loop.js",
+            "turtle/generators_logic.js",
+            "turtle/generators_tracking.js",
+            "turtle/generators_electrical_machinery.js",
             "turtle/generators_time.js"
     );
     private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);

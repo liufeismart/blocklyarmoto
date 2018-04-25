@@ -28,20 +28,23 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
 
 
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
-            "turtle/blocks_ultrasonic.json",
-            "turtle/blocks_time.json",
-            "turtle/blocks_steering_engine.json",
-            "turtle/blocks_time.json",
-            "turtle/blocks_electrical_machinery.json",
             "turtle/blocks_loop.json",
             "turtle/blocks_logic.json",
+            "turtle/blocks_steering_engine.json",
+            "turtle/blocks_ultrasonic.json",
+            "turtle/blocks_electrical_machinery.json",
+            "turtle/blocks_time.json",
             "turtle/blocks_variate.json"
 
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_variate.js",
+            "turtle/generators_loop.js",
+            "turtle/generators_logic.js",
+            "turtle/generators_steering_engine.js",
             "turtle/generators_ultrasonic.js",
-            "turtle/generators_time"
+            "turtle/generators_electrical_machinery.js",
+            "turtle/generators_time.js",
+            "turtle/generators_variate.js"
     );
 
     private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);

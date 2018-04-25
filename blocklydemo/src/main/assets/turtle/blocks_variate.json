@@ -15,7 +15,7 @@
   },
   {
     "type": "variate_right_direction",
-    "message0": "左边距离",
+    "message0": "右边距离",
     "colour": 260,
     "output": null,
     "tooltip": "Returns the length of a list."

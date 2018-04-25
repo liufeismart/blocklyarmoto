@@ -1,5 +1,5 @@
 'use strict';
-Blockly.JavaScript['variate_right_direction'] = function(block) {
+Blockly.JavaScript['variate_front_direction'] = function(block) {
   return 'variate_front_distance'+"\n";
 };
 Blockly.JavaScript['variate_left_direction'] = function(block) {

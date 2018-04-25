@@ -3,16 +3,11 @@ package com.blockly.util;
 import android.os.Message;
 import android.util.Log;
 
-import com.blockly.android.demo.activity.SkillMovesActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
@@ -129,15 +124,15 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
                 item.put("in", Integer.parseInt(strs[1]));
             }
             //变量
-            else if(statement.contains("variate_front_direction")) {
+            else if(statement.contains("variate_front_distance")) {
                 item.put("action", "variate");
                 item.put("in", "variate_front_direction");
             }
-            else if(statement.contains("variate_left_direction")) {
+            else if(statement.contains("variate_left_distance")) {
                 item.put("action", "variate");
                 item.put("in", "variate_left_direction");
             }
-            else if(statement.contains("variate_right_direction")) {
+            else if(statement.contains("variate_right_distance")) {
                 item.put("action", "variate");
                 item.put("in", "variate_right_direction");
             }
@@ -176,13 +171,12 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
                 for(int j=0; j< parseInt(strs[2]); j++) {
                     JSONObject item_temp = new JSONObject();
                     parseStatement(statements, i+j, array);
+                    i = i+j;
                 }
                 array.put(item);
-                i++;
                 return new Bean(item, i);
             }
             array.put(item);
-            i++;
         } catch(JSONException e) {
             e.printStackTrace();
         }

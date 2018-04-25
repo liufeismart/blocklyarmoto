@@ -14,7 +14,7 @@ Blockly.JavaScript['turtle_repeat_internal'] = function(block) {
       var value2 = Blockly.JavaScript.statementToCode(block,"DO");
       var statements = value2.split('\n');
 
-      return "repeat:"+value1+":"+ (statements.length-1)+'\n'+value2+'\n';
+      return "repeat:"+value1+":"+ (statements.length-1)+'\n'+value2;
 //    var b=a.getField("TIMES")?String(Number(a.getFieldValue("TIMES"))):Blockly.JavaScript.valueToCode(a,"TIMES",Blockly.JavaScript.ORDER_ASSIGNMENT)||"0",c=Blockly.JavaScript.statementToCode(a,"DO");
 //    var c=Blockly.JavaScript.addLoopTrap(c,a.id);
 //    a="";

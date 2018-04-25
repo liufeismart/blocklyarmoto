@@ -136,27 +136,29 @@ public class ClientThread extends HandlerThread {
             int in2  = obj.getInt("in2");
             Log.e(BluetoothActivity.TAG, "repeat: " + in1);
             i++;
-            int stCount = count;
+            int stCount = i+in2;
             int stIndex = i;
             if(in1!=-1) {
                 stCount = i+in2;
                 for(int forCount=0; forCount<in1; forCount++) {
-                    for(stIndex=i;  stCount!=-1 && stIndex < stCount ; stIndex++) {
+                    stIndex = i;
+                    stCount = i+in2;
+                    for(; stCount!=-1 && stIndex < stCount ; stIndex++) {
                         if(!isRun) {
                             stCount = -1;
                         }
                         else {
-                            Result_Statement st = parseStatement(array, stIndex, count,in , out);
+                            Result_Statement st = parseStatement(array, stIndex, stCount,in , out);
                             if(!isRun) {
                                 st.count = -1;
                             }
                             stIndex = st.index;
                             stCount = st.count;
                         }
-
                     }
                 }
-                return new Result_Statement(stCount, i);
+                i += in2-1;
+                return new Result_Statement(count, i);
             }
             else {
                 while(true) {
@@ -184,16 +186,32 @@ public class ClientThread extends HandlerThread {
             int in1 = obj.getInt("in1");
             int in2 = obj.getInt("in2");
             int in3 = obj.getInt("in3");
+            int stCount = 0;
             if(!result_if.result.equals("0")) {
-                i = result_if.index;
-                Log.v(BluetoothActivity.TAG, "if:"+result_if.index);
-                count=i+in2+1;
+                i = result_if.index+1;
+                Log.v(BluetoothActivity.TAG, "if:"+i+":"+in1+":"+in2+":"+in3);
+                stCount = in2;
             } else {
-
-                i = result_if.index+in2;
-                Log.v(BluetoothActivity.TAG, "else:"+result_if.index+":"+in2+":"+i);
-                count=i+in3+1;
+                i = result_if.index+in2+1;
+                Log.v(BluetoothActivity.TAG, "else:"+i+":"+in1+":"+in2+":"+in3);
+                stCount = in3;
             }
+            int stIndex = i;
+            stCount += i;
+            for(; stIndex<stCount; stIndex++) {
+                if(!isRun) {
+                    stCount = -1;
+                }
+                else {
+                    Result_Statement st = parseStatement(array, stIndex, stCount,in , out);
+                    if(!isRun) {
+                        st.count = -1;
+                    }
+                    stIndex = st.index;
+                    stCount = st.count;
+                }
+            }
+            i += in2+in3;
         } else if(action.equals("last_time")) {
             int in1 = obj.getInt("in1");
             int in2 = obj.getInt("in2");
@@ -208,8 +226,17 @@ public class ClientThread extends HandlerThread {
                 String action_execute  = obj_execute.getString("action");
                 if("electrical_machinery_1".equals(action_execute) ||
                         "electrical_machinery_2".equals(action_execute)) {
+                    int in_execute = obj_execute.getInt("in");
                     obj_execute.put("in", 0);
                     objStr = obj_execute.toString();
+                    obj_execute.put("in", in_execute);
+                    uploadStatement(out, objStr, in);
+                }
+                else if("steering_engine".equals(action_execute)) {
+                    int in_execute = obj_execute.getInt("in");
+                    obj_execute.put("in", 90);
+                    objStr = obj_execute.toString();
+                    obj_execute.put("in", in_execute);
                     uploadStatement(out, objStr, in);
                 }
             }
@@ -266,7 +293,7 @@ public class ClientThread extends HandlerThread {
             int in3_cp = obj.getInt("in3");
             int count_cp_in3 = result_cp_in2.index+in3_cp;
             Result_Compare result_cp_in3 = null;
-            i = result_cp_in2.index+1;
+            i = result_cp_in2.index;
             for(; i<=count_cp_in3; i++) {
                 JSONObject obj_cp_in3 = array.getJSONObject(i);
                 result_cp_in3 = parseCompare(obj_cp_in3, array, i, out, in);
@@ -309,7 +336,8 @@ public class ClientThread extends HandlerThread {
             return new Result_Compare(result,i);
         } else if(action.equals("tracking_result") ||
                 action.equals("avoidance_result") ||
-                action.equals("ultrasonic_result")) {
+                action.equals("ultrasonic_result") ||
+                action.equals("variate")) {
             return new Result_Compare(String.valueOf(obj.getInt("in")),i);
         }
         return null;

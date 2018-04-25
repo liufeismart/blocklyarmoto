@@ -31,7 +31,11 @@ public class AvoidanceActivity extends AbstractBlocklyActivity {
 
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_follow.js"
+            "turtle/generators_loop.js",
+            "turtle/generators_logic.js",
+            "turtle/generators_avoidance.js",
+            "turtle/generators_electrical_machinery.js",
+            "turtle/generators_time.js"
     );
 
     private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);

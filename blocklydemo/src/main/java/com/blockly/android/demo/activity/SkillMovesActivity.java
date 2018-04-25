@@ -1,22 +1,13 @@
 package com.blockly.android.demo.activity;
 
-import android.os.Message;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static java.lang.Integer.parseInt;
 
 /**
  * Created by liufeismart on 2018/3/23.
@@ -26,12 +17,15 @@ public class SkillMovesActivity extends AbstractBlocklyActivity {
     private final String TAG = SkillMovesActivity.class.getSimpleName();
 
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
+            "turtle/blocks_loop.json",
             "turtle/blocks_electrical_machinery.json",
-            "turtle/blocks_time.json",
-            "turtle/blocks_loop.json"
+            "turtle/blocks_time.json"
+
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_skillmoves.js"
+            "turltle/generators_loop.js",
+            "turtle/generators_electrical_machinery.js",
+            "turtle/generators_time.js"
     );
     private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
 

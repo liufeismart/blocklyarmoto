@@ -21,7 +21,7 @@ public class LeftRightActivity extends AbstractBlocklyActivity {
             "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_forward_back.js",
+            "turtle/generators_electrical_machinery.js",
             "turtle/generators_time.js"
     );
 
