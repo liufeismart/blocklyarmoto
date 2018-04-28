@@ -1,0 +1,36 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="last_time" id="20a5e822-9081-465f-9c36-19d1c48cd49a" x="32.0" y="41.0">
+        <field name="NUM">3</field>
+        <statement name="DO">
+            <block type="tricolor" id="b7446fbe-16f5-4bcc-aea5-12a63577e2f5">
+                <field name="NUM1">255</field>
+                <field name="NUM2">0</field>
+                <field name="NUM3">0</field>
+            </block>
+        </statement>
+        <next>
+            <block type="last_time" id="e2b76edb-91fe-408d-98ea-268ce1b91ee0">
+                <field name="NUM">3</field>
+                <statement name="DO">
+                    <block type="tricolor" id="a764d7ec-b101-4885-add7-a5714f15f2d0">
+                        <field name="NUM1">0</field>
+                        <field name="NUM2">255</field>
+                        <field name="NUM3">0</field>
+                    </block>
+                </statement>
+                <next>
+                    <block type="last_time" id="8ac96ee0-215d-4bf4-a098-d7410bfc3893">
+                        <field name="NUM">3</field>
+                        <statement name="DO">
+                            <block type="tricolor" id="79dcf6c7-77d2-493f-a996-efc2da222f26">
+                                <field name="NUM1">0</field>
+                                <field name="NUM2">0</field>
+                                <field name="NUM3">255</field>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

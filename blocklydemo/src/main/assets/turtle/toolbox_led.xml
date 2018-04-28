@@ -6,6 +6,8 @@
         <block type="light_down">
             <field name="VALUE">13</field>
         </block>
+    </category>
+    <category name="时间" colour="160">
         <block type="last_time">
             <field name="NUM">1</field>
         </block>

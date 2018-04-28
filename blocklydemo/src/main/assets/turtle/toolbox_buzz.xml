@@ -1,0 +1,12 @@
+<toolbox>
+    <category name="嗡鸣器" colour="160">
+        <block type="buzz">
+            <field name="NUM">100</field>
+        </block>
+    </category>
+    <category name="时间" colour="160">
+        <block type="last_time">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

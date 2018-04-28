@@ -41,7 +41,7 @@ public class ClientThread extends HandlerThread {
     private static Object lock = new Object();
     private boolean isRun;
     private List<Integer> record_execute = new ArrayList<>();
-    private HashMap<String, Integer>  map_variate = new HashMap<>();
+    private HashMap<String, Integer>  map_variate = new HashMap<String, Integer>();
 
     public ClientThread(final BluetoothActivity activity, BluetoothDevice bluetoothDevice) {
         super("Hanler");
@@ -131,6 +131,7 @@ public class ClientThread extends HandlerThread {
     private Result_Statement parseStatement(JSONArray array, int i, int count, InputStream in, OutputStream out)  throws Exception{
         JSONObject obj = array.getJSONObject(i);
         String action = obj.getString("action");
+        Log.v("parseStatement", i+": "+obj.toString());
         if(action.equals("repeat")) {
             int in1 = obj.getInt("in1");
             int in2  = obj.getInt("in2");
@@ -162,6 +163,8 @@ public class ClientThread extends HandlerThread {
             }
             else {
                 while(true) {
+                    stIndex = i;
+                    stCount = i+in2;
                     for(stIndex=i; stIndex < stCount ; stIndex++) {
                         if(!isRun) {
                             break;
@@ -211,7 +214,8 @@ public class ClientThread extends HandlerThread {
                     stCount = st.count;
                 }
             }
-            i += in2+in3;
+            i += in2+in3-1;
+            Log.v("parseStatement", "if执行结束："+i);
         } else if(action.equals("last_time")) {
             int in1 = obj.getInt("in1");
             int in2 = obj.getInt("in2");
@@ -239,6 +243,13 @@ public class ClientThread extends HandlerThread {
                     obj_execute.put("in", in_execute);
                     uploadStatement(out, objStr, in);
                 }
+                else if("buzz".equals(action_execute)) {
+                    int in_execute = obj_execute.getInt("in");
+                    obj_execute.put("in", 0);
+                    objStr = obj_execute.toString();
+                    obj_execute.put("in", in_execute);
+                    uploadStatement(out, objStr, in);
+                }
             }
         }
         else if(action.equals("variate_set")) {
@@ -255,7 +266,9 @@ public class ClientThread extends HandlerThread {
                         JSONObject obj_cp_in3 = array.getJSONObject(i);
                         result_set_in2 = parseCompare(obj_cp_in3, array, i, out, in);
                     }
-                    map_variate.put(obj_variate.getString("in"), Integer.parseInt(result_set_in2.result));
+                    map_variate.put(obj_variate.getString("in"), (int)(Float.parseFloat(result_set_in2.result)));
+                    Log.v("parseStatement", "variate_set :" + obj_variate.getString("in")+ " = "+Float.parseFloat(result_set_in2.result));
+                    i--;
                     return new Result_Statement(count, i);
                 }
             }
@@ -301,21 +314,29 @@ public class ClientThread extends HandlerThread {
             String result = "";
 
             int result_int_1 = Integer.parseInt(result_cp_in2.result);
-            int result_int_2 = Integer.parseInt(result_cp_in3.result);
+            int result_int_2 = (int)Float.parseFloat(result_cp_in3.result);
             boolean result_bool = false;
+            String option_cp = "";
             if("EQ".equals(in1_cp)) {
+                option_cp = "==";
                 result_bool = (result_int_1 == result_int_2);
             } else if("NEQ".equals(in1_cp)) {
                 result_bool = (result_int_1 != result_int_2);
+                option_cp = "!=";
             } else if("GTR".equals(in1_cp)) {
                 result_bool = (result_int_1 > result_int_2);
+                option_cp = ">";
             } else if("VA".equals(in1_cp)) {
                 result_bool = (result_int_1 < result_int_2);
+                option_cp = " < ";
             } else if("GTE".equals(in1_cp)) {
                 result_bool = (result_int_1 >= result_int_2);
+                option_cp = " >= ";
             } else if("EQ".equals(in1_cp)) {
                 result_bool = (result_int_1 <= result_int_2);
+                option_cp = " <= ";
             }
+            Log.v("parseStatement", "if:" +result_int_1+ option_cp+result_int_2);
             if(result_bool) {
                 result = "1";
             } else {
@@ -336,9 +357,14 @@ public class ClientThread extends HandlerThread {
             return new Result_Compare(result,i);
         } else if(action.equals("tracking_result") ||
                 action.equals("avoidance_result") ||
-                action.equals("ultrasonic_result") ||
-                action.equals("variate")) {
+                action.equals("ultrasonic_result")) {
+            if(action.equals("ultrasonic_result")) {
+                Log.v("parseStatement", obj.toString());
+            }
             return new Result_Compare(String.valueOf(obj.getInt("in")),i);
+        } else if(action.equals("variate")) {
+            map_variate.get(obj.getString("in"));
+            return new Result_Compare(String.valueOf(map_variate.get(obj.getString("in"))),i);
         }
         return null;
     }
@@ -369,83 +395,11 @@ public class ClientThread extends HandlerThread {
 
                 break;
             }
-            else {
-//                Log.e(BluetoothActivity.TAG, "收到的字符串:"+str);
-            }
             Thread.sleep(50);
 
         }
         return str;
     }
-
-//    @Override
-//    public void run() {
-//        try {
-//            Log.e(BluetoothActivity.TAG, "Client连接");
-////            mmSocket = device.createInsecureRfcommSocketToServiceRecord(UUID.fromString(SERVICE_UUID));
-//            mmSocket =(BluetoothSocket) device.getClass().getMethod("createRfcommSocket", new Class[] {int.class}).invoke(device,1);
-//            //请求连接
-//            mmSocket.connect();
-//            Log.e(BluetoothActivity.TAG, "Client连接建立成功");
-//            handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_SUCCESS);
-//            OutputStream out = mmSocket.getOutputStream();
-//            InputStream in = mmSocket.getInputStream();
-//
-//            while(true) {
-//                Log.e(BluetoothActivity.TAG, "等待接收消息1");
-//                synchronized (lock) {
-//                    Log.e(BluetoothActivity.TAG, "等待接收消息2");
-//                    Log.e(BluetoothActivity.TAG,  Thread.currentThread().getName());
-//                    lock.wait();
-//                    if(content!=null && !"".equals(content)) {
-//                        JSONObject root = new JSONObject(content);
-//                        JSONArray array = root.getJSONArray("array");
-//                        for(int i=0; i<array.length(); i++) {
-//                            JSONObject obj = array.getJSONObject(i);
-//                            String objStr = obj.toString();
-//                            Log.e(BluetoothActivity.TAG, "发送的消息: " + objStr);
-//                            out.write(objStr.getBytes());
-//                            String str = "";
-//                            while(true) {
-//                                byte[] buffer = new byte[128];
-//                                int count = in.read(buffer);
-//                                str += new String(buffer, 0, count, Charset.forName("utf-8"));
-//                                int start = str.lastIndexOf("<");
-//                                int end = str.lastIndexOf(">");
-//                                if(start>=0 && end >start ) {
-//                                    Log.e(BluetoothActivity.TAG, "收到的字符串:"+str);
-//                                    str = str.substring(start,end);
-//                                    if(str.equals("success")) {
-//                                        break;
-//                                    }
-//
-//                                    break;
-//                                }
-//                                else {
-//                                    Log.e(BluetoothActivity.TAG, "收到的字符串:"+str);
-//                                }
-//                                Thread.sleep(50);
-//                            }
-//                        }
-//                    }
-//                }
-//
-//            }
-//        } catch (IOException e) {
-//            Log.e(BluetoothActivity.TAG, "IOException");
-//            handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_FAIL);
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            Log.e(BluetoothActivity.TAG, "InterruptedException");
-//            handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_FAIL);
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            Log.e(BluetoothActivity.TAG, "Exception");
-//            handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_FAIL);
-//            e.printStackTrace();
-//        }
-//
-//    }
 
     class Result_Compare {
         public String result;

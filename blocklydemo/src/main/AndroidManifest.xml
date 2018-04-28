@@ -111,6 +111,10 @@
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
+            android:name=".activity.TriColorLedActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
             android:name=".activity.IntroduceActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>

@@ -17,31 +17,28 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by liufeismart on 18/1/19.
+ * Created by humax on 18/4/27
  */
 
-public class LEDActivity extends AbstractBlocklyActivity {
+public class TriColorLedActivity extends AbstractBlocklyActivity {
 
-    public static final String TAG = "LEDActivity";
-
-
+    public static final String TAG = "TriColorLedActivity";
 
 
     static final List<String> TURTLE_BLOCK_DEFINITIONS = Arrays.asList(
-            "turtle/blocks_light.json",
+            "turtle/blocks_tricolor.json",
             "turtle/blocks_time.json"
     );
     static final List<String> TURTLE_BLOCK_GENERATORS = Arrays.asList(
-            "turtle/generators_led.js",
+            "turtle/generators_tricolor.js",
             "turtle/generators_time.js"
     );
-
     private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
 
     @NonNull
     @Override
     protected String getToolboxContentsXmlPath() {
-        return "turtle/toolbox_led.xml";
+        return "turtle/toolbox_tricolor.xml";
     }
 
     @NonNull
@@ -67,26 +64,6 @@ public class LEDActivity extends AbstractBlocklyActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //
-//        String cmd = "Log.e(\"CodeUtil\",\"usage:java TestRun int i=1; System.out.println(i+100);\");";
-//
-//        CodeUtil t = new CodeUtil(this.getApplicationContext());
-//        t.createJavaFile(cmd);
-//        if (t.makeJavaFile() == 0) {
-//            t.run();
-//        }
-//        if (Build.VERSION.SDK_INT >= 23) {
-//            int REQUEST_CODE_CONTACT = 101;
-//            String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-//            //验证是否许可权限
-//            for (String str : permissions) {
-//                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
-//                    //申请权限
-//                    this.requestPermissions(permissions, REQUEST_CODE_CONTACT);
-//                    return;
-//                }
-//            }
-//        }
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -106,18 +83,15 @@ public class LEDActivity extends AbstractBlocklyActivity {
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         101);
-
-                // MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
             }
         }
     }
 
+
     @Override
     protected String getWorkspaceAutosavePath() {
-        return "workspace/workspace_led.xml";
+        return "workspace/workspace_tricolor.xml";
     }
 
-
 }
+

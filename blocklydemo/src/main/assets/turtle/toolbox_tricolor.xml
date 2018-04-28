@@ -1,0 +1,14 @@
+<toolbox>
+    <category name="三色灯" colour="160">
+        <block type="tricolor">
+            <field name="NUM1">255</field>
+            <field name="NUM2">255</field>
+            <field name="NUM3">255</field>
+        </block>
+    </category>
+    <category name="时间" colour="160">
+        <block type="last_time">
+            <field name="NUM">1</field>
+        </block>
+    </category>
+</toolbox>

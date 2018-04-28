@@ -1,0 +1,18 @@
+[
+  {
+    "type": "light_up",
+    "message0": "亮起灯 ",
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 160,
+    "tooltip": "Lifts or lowers the pen, to stop or start drawing."
+  },
+  {
+    "type": "light_down",
+    "message0": "灭掉灯",
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 160,
+    "tooltip": "Lifts or lowers the pen, to stop or start drawing."
+  }
+]

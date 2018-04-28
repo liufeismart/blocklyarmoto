@@ -49,7 +49,8 @@ public class LessonListActivity extends Activity {
                         "第八课\n摇头晃脑",
                         "第九课\n超声波避障",
                         "第十课\nLED灯",
-                        "第十一课\n嗡鸣器"};
+                        "第十一课\n嗡鸣器",
+                        "第十二课\n变色灯"};
 
     private Class[] jumpActivity = {IntroduceActivity.class,
             ForwardBackActivity.class,
@@ -61,7 +62,8 @@ public class LessonListActivity extends Activity {
             SwingAroundActivity.class,
             UltrasonicActivity.class,
             LEDActivity.class,
-            BuzzActivity.class};
+            BuzzActivity.class,
+            TriColorLedActivity.class};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate");
