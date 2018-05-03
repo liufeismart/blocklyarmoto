@@ -1,5 +1,5 @@
 <toolbox>
-    <category name="Light" colour="160">
+    <category name="灯" colour="160">
         <block type="light_up">
             <field name="VALUE">13</field>
         </block>

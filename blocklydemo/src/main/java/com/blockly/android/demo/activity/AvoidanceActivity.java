@@ -1,5 +1,6 @@
 package com.blockly.android.demo.activity;
 
+import android.content.Context;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -12,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class AvoidanceActivity extends AbstractBlocklyActivity {
             "turtle/generators_time.js"
     );
 
-    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
+    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG, new SoftReference<Context>(this));
 
     @NonNull
     @Override

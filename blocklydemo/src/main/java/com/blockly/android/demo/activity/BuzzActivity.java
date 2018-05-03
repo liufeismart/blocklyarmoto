@@ -1,6 +1,7 @@
 package com.blockly.android.demo.activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
+import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +38,8 @@ public class BuzzActivity  extends AbstractBlocklyActivity {
             "turtle/generators_buzz.js",
             "turtle/generators_time.js"
     );
-    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
+    private final CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG,
+                new SoftReference<Context>(this));
 
     @NonNull
     @Override

@@ -130,6 +130,7 @@ public class BluetoothActivity extends Activity {
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);//动作状态发生了变化
         filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
         filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
+        filter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED);
         Log.v(TAG, "registerReceiver");
         registerReceiver(mBlueToothReceiver, filter);
         boolean isDiscovering = mBluetoothAdapter.startDiscovery();
@@ -227,6 +228,7 @@ public class BluetoothActivity extends Activity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
+
             String action = intent.getAction();
             Log.e(TAG, "onReceive :" + action);
             if(action.equals(BluetoothAdapter.ACTION_DISCOVERY_STARTED)) {

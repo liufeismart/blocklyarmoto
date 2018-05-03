@@ -1,11 +1,13 @@
 package com.blockly.android.demo.activity;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.blockly.util.DefaultCodeGeneratorCallback;
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
+import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +26,8 @@ public class SwingAroundActivity extends AbstractBlocklyActivity {
             "turtle/generators_steering_engine.js",
             "turtle/generators_time.js"
     );
-    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG);
+    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG,
+            new SoftReference<Context>(this));
 
 
 

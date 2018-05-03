@@ -1,13 +1,18 @@
 package com.blockly.util;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Message;
 import android.util.Log;
 
+import com.blockly.android.demo.activity.BluetoothActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.ref.SoftReference;
 
 import static java.lang.Integer.parseInt;
 
@@ -18,9 +23,11 @@ import static java.lang.Integer.parseInt;
 public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeGeneratorCallback {
 
     private String tag = "";
+    private SoftReference<Context> contextRef;
 
-    public DefaultCodeGeneratorCallback(String tag) {
+    public DefaultCodeGeneratorCallback(String tag, SoftReference<Context> contextRef) {
         this.tag = tag;
+        this.contextRef = contextRef;
     }
 
     @Override
@@ -43,7 +50,12 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
             Message msg = new Message();
             msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
             msg.obj = root.toString();
-            com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
+            if(BluetoothUtil.isConnected(contextRef) && com.blockly.android.demo.Constants.mClientThread != null) {
+                com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
+            }
+            else {
+                contextRef.get().startActivity(new Intent(contextRef.get(), BluetoothActivity.class));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

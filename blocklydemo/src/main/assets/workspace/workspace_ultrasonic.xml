@@ -14,7 +14,7 @@
                         </value>
                         <next>
                             <block type="steering_engine" id="04a51216-dbc3-4bd1-8824-573ae9d8bd84">
-                                <field name="NUM">0</field>
+                                <field name="NUM">180</field>
                                 <next>
                                     <block type="variate_set" id="cc985602-732a-4cf1-9dc6-d6f8c61e896b">
                                         <value name="A">
@@ -25,7 +25,7 @@
                                         </value>
                                         <next>
                                             <block type="steering_engine" id="16d7eb11-9f60-40bb-ba69-9c90b34c83e6">
-                                                <field name="NUM">180</field>
+                                                <field name="NUM">0</field>
                                                 <next>
                                                     <block type="variate_set" id="b449605d-118b-49be-bf18-7ea6e58f536d">
                                                         <value name="A">
@@ -139,7 +139,7 @@
                                                                                         <value name="IF0">
                                                                                             <block type="logic_compare" id="466635e7-b4cc-4789-9ea2-2ba909f11b93">
                                                                                                 <value name="A">
-                                                                                                    <block type="variate_left_direction" id="9b86e0a7-7ef9-49d4-9155-ec1d0b248826" />
+                                                                                                    <block type="variate_right_direction" id="445e4d92-a42d-43a0-b5af-6c574692a148" />
                                                                                                 </value>
                                                                                                 <value name="B">
                                                                                                     <block type="ultrasonic_result" id="5deb838f-189f-48ce-bd0d-a346d3e11fb7">

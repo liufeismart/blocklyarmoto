@@ -63,10 +63,8 @@ public class ClientThread extends HandlerThread {
                             isRun = false;
                         }
                         content = (String)msg.obj;
-                        Log.e(BluetoothActivity.TAG, "发送消息"+ content);
                         Log.e(BluetoothActivity.TAG,  Thread.currentThread().getName());
                         synchronized (lock) {
-                            Log.e(BluetoothActivity.TAG, "唤醒");
                             lock.notifyAll();
 
                         }
@@ -104,9 +102,11 @@ public class ClientThread extends HandlerThread {
                         JSONArray array = root.getJSONArray("array");
                         int count = array.length();
                         for(int i=0;count!=-1 && i<count; i++) {
-                            Result_Statement st = parseStatement(array, i, count,in , out);
-                            i = st.index;
-                            count = st.count;
+                            if(isRun) {
+                                Result_Statement st = parseStatement(array, i, count,in , out);
+                                i = st.index;
+                                count = st.count;
+                            }
                         }
                     }
                 }
@@ -214,7 +214,13 @@ public class ClientThread extends HandlerThread {
                     stCount = st.count;
                 }
             }
-            i += in2+in3-1;
+            if(!result_if.result.equals("0")) {
+                i += in2+in3-1;
+            }
+            else {
+                i += in3-1;
+            }
+
             Log.v("parseStatement", "if执行结束："+i);
         } else if(action.equals("last_time")) {
             int in1 = obj.getInt("in1");
