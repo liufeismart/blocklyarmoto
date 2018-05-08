@@ -1,24 +1,24 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="last_time" id="37e3c730-651b-4203-9f81-9ebef539bd49" x="185.0" y="-14.0">
-        <field name="NUM">1</field>
+        <field name="NUM">1000</field>
         <statement name="DO">
             <block type="light_up" id="71ce9969-dbd3-46f8-8646-cc40c8a19ee6" />
         </statement>
         <next>
             <block type="last_time" id="36e05f7a-0d85-4e9e-afbc-dbcb0a8729ac">
-                <field name="NUM">1</field>
+                <field name="NUM">1000</field>
                 <statement name="DO">
                     <block type="light_down" id="1b32295d-eaca-43b2-95c4-f148e07bbdef" />
                 </statement>
                 <next>
                     <block type="last_time" id="a105b02b-660e-45ad-9196-29df78c10b34">
-                        <field name="NUM">1</field>
+                        <field name="NUM">1000</field>
                         <statement name="DO">
                             <block type="light_up" id="8a252b8b-7c5f-4163-86c4-75a3c1db3d98" />
                         </statement>
                         <next>
                             <block type="last_time" id="29ea7b99-69cd-45df-9c7a-dc6fa84510ae">
-                                <field name="NUM">1</field>
+                                <field name="NUM">1000</field>
                                 <statement name="DO">
                                     <block type="light_down" id="057718c1-0b2e-4077-84f0-da42b9316ee2" />
                                 </statement>

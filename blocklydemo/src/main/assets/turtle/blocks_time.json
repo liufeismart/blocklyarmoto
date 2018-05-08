@@ -1,7 +1,7 @@
 [
   {
     "type": "last_time",
-    "message0": "持续%1  秒",
+    "message0": "持续%1  毫秒",
     "args0": [
       {
         "type": "field_number",

@@ -552,6 +552,13 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
                     }
                 }
             });
+            View blockly_trash_icon = content.findViewById(R.id.blockly_trash_icon);
+            blockly_trash_icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClearWorkspace();
+                }
+            });
             ImageButton blockly_demo_button = content.findViewById(R.id.blockly_demo_button);
             blockly_demo_button.setOnClickListener(new View.OnClickListener() {
                 @Override

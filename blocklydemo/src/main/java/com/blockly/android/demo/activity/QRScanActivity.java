@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.blockly.android.demo.Constants;
 import com.blockly.android.demo.R;
 import com.google.zxing.Result;
 
@@ -47,6 +48,7 @@ public class QRScanActivity extends Activity implements ZXingScannerView.ResultH
     @Override
     public void handleResult(Result result) {
         Intent intent = new Intent(this, QRWaitActivity.class);
+        intent.putExtra(Constants.EXTRA_SCAN_RESULT, result.getText());
         startActivity(intent);
     }
 }

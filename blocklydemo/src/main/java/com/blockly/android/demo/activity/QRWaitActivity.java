@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.blockly.android.demo.Constants;
 import com.blockly.android.demo.R;
 
 /**
@@ -21,6 +22,7 @@ public class QRWaitActivity extends Activity {
             @Override
             public void run() {
                 Intent intent = new Intent(QRWaitActivity.this, QRResultActivity.class);
+                intent.putExtra(Constants.EXTRA_SCAN_RESULT, getIntent().getStringExtra(Constants.EXTRA_SCAN_RESULT));
                 startActivity(intent);
                 finish();
             }

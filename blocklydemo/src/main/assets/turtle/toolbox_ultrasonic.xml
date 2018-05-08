@@ -32,7 +32,7 @@
     </category>
     <category name="时间" colour="160">
         <block type="last_time">
-            <field name="NUM">1</field>
+            <field name="NUM">1000</field>
         </block>
     </category>
     <category name="变量" colour="160">

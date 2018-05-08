@@ -3,7 +3,7 @@
         <field name="TIMES">4</field>
         <statement name="DO">
             <block type="last_time" id="d58d666b-57ca-495c-88ae-2869e5858576">
-                <field name="NUM">3</field>
+                <field name="NUM">3000</field>
                 <statement name="DO">
                     <block type="electrical_machinery_1" id="b8e7cf44-0c49-466e-86c1-ee4fb0ac2cc0">
                         <field name="NUM">200</field>
@@ -16,7 +16,7 @@
                 </statement>
                 <next>
                     <block type="last_time" id="df3fa533-2810-4791-84c3-d10617afba1f">
-                        <field name="NUM">3</field>
+                        <field name="NUM">3000</field>
                         <statement name="DO">
                             <block type="electrical_machinery_1" id="97fa14b9-c10f-4d57-9a11-98ebb087ebd4">
                                 <field name="NUM">200</field>
@@ -36,7 +36,7 @@
                 <field name="TIMES">5</field>
                 <statement name="DO">
                     <block type="last_time" id="e6bb71b2-8c79-4621-b99a-7758974812bf">
-                        <field name="NUM">3</field>
+                        <field name="NUM">3000</field>
                         <statement name="DO">
                             <block type="electrical_machinery_2" id="09542bea-d6a2-4125-9849-f46b35516bce">
                                 <field name="NUM">200</field>
@@ -49,7 +49,7 @@
                         </statement>
                         <next>
                             <block type="last_time" id="fa2152e1-4a5f-41a6-9b6e-30702a9928e9">
-                                <field name="NUM">3</field>
+                                <field name="NUM">3000</field>
                                 <statement name="DO">
                                     <block type="electrical_machinery_1" id="5469c9df-d8f3-438e-954d-7c48ff9d92c9">
                                         <field name="NUM">-200</field>

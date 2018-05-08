@@ -228,10 +228,10 @@ public class FlyoutController {
         }
         // The trash icon is always a drop target.
         trashIcon.setOnDragListener(new OnDragToTrashListener(mController));
-        if (mTrashUi != null && mTrashIsCloseable) {
-            // But we only need a click listener if the trash can be closed.
-            trashIcon.setOnClickListener(mTrashClickListener);
-        }
+//        if (mTrashUi != null && mTrashIsCloseable) {
+//            // But we only need a click listener if the trash can be closed.
+//            trashIcon.setOnClickListener(mTrashClickListener);
+//        }
     }
 
     /**

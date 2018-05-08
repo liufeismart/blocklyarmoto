@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="last_time" id="ba62ffab-b9c3-41ec-a643-a30e4bdc3331" x="115.0" y="58.0">
-        <field name="NUM">3</field>
+        <field name="NUM">3000</field>
         <statement name="DO">
             <block type="buzz" id="47a73f69-a26f-4b67-aba9-3072c0f2be15">
                 <field name="NUM">500</field>
@@ -8,7 +8,7 @@
         </statement>
     </block>
     <block type="last_time" id="5dbfbe34-f050-4e3c-ac53-1e0e6a016a0f" x="115.0" y="199.0">
-        <field name="NUM">3</field>
+        <field name="NUM">3000</field>
         <statement name="DO">
             <block type="buzz" id="2227acd5-62eb-4b06-95a9-9d3db76ec7f7">
                 <field name="NUM">1200</field>
@@ -16,7 +16,7 @@
         </statement>
         <next>
             <block type="last_time" id="7ad3492b-6ff7-483c-aa99-d0db1e24f09c">
-                <field name="NUM">3</field>
+                <field name="NUM">3000</field>
                 <statement name="DO">
                     <block type="buzz" id="2497c0b3-4fe5-4f68-a0ba-08ff87dd5ce8">
                         <field name="NUM">600</field>

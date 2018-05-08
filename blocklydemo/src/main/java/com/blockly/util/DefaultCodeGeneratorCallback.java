@@ -50,7 +50,8 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
             Message msg = new Message();
             msg.what = com.blockly.android.demo.Constants.MSG_DELIVERY;
             msg.obj = root.toString();
-            if(BluetoothUtil.isConnected(contextRef) && com.blockly.android.demo.Constants.mClientThread != null) {
+            if( com.blockly.android.demo.Constants.mClientThread != null &&
+                    com.blockly.android.demo.Constants.mClientThread.isConnected() ) {
                 com.blockly.android.demo.Constants.mClientThread.handler.sendMessage(msg);
             }
             else {
@@ -198,8 +199,8 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
             } else if (statement.contains("last_time")) {
                 item.put("action", "last_time");
                 String[] strs = statement.split(":");
-                item.put("in1", parseInt(strs[1]));
-                item.put("in2", parseInt(strs[2]));
+                item.put("in1", Float.parseFloat(strs[1]));
+                item.put("in2", Float.parseFloat(strs[2]));
                 i++;
                 for(int j=0; j< parseInt(strs[2]); j++) {
                     JSONObject item_temp = new JSONObject();

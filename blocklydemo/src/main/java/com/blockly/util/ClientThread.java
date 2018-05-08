@@ -43,6 +43,8 @@ public class ClientThread extends HandlerThread {
     private List<Integer> record_execute = new ArrayList<>();
     private HashMap<String, Integer>  map_variate = new HashMap<String, Integer>();
 
+    private boolean isConnnected;
+
     public ClientThread(final BluetoothActivity activity, BluetoothDevice bluetoothDevice) {
         super("Hanler");
         device = bluetoothDevice;
@@ -56,17 +58,19 @@ public class ClientThread extends HandlerThread {
                         break;
                     case MSG_BLUETOOTH_CONNECT_FAIL:
                         activity.changeLinkState(false);
-                        Log.e(BluetoothActivity.TAG, "MSG_BLUETOOTH_CONNECT_FAIL");
+
                         break;
                     case Constants.MSG_DELIVERY:
                         if(isRun) {
                             isRun = false;
                         }
-                        content = (String)msg.obj;
-                        Log.e(BluetoothActivity.TAG,  Thread.currentThread().getName());
-                        synchronized (lock) {
-                            lock.notifyAll();
+                        else {
+                            content = (String)msg.obj;
+                            Log.e(BluetoothActivity.TAG,  Thread.currentThread().getName());
+                            synchronized (lock) {
+                                lock.notifyAll();
 
+                            }
                         }
                         break;
                 }
@@ -83,6 +87,7 @@ public class ClientThread extends HandlerThread {
             mmSocket =(BluetoothSocket) device.getClass().getMethod("createRfcommSocket", new Class[] {int.class}).invoke(device,1);
             //请求连接
             mmSocket.connect();
+            isConnnected = true;
             Log.e(BluetoothActivity.TAG, "Client连接建立成功");
             handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_SUCCESS);
             OutputStream out = mmSocket.getOutputStream();
@@ -114,6 +119,8 @@ public class ClientThread extends HandlerThread {
             }
         } catch (IOException e) {
             Log.e(BluetoothActivity.TAG, "IOException");
+            isConnnected = false;
+
             handler.sendEmptyMessage(MSG_BLUETOOTH_CONNECT_FAIL);
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -227,7 +234,7 @@ public class ClientThread extends HandlerThread {
             int in2 = obj.getInt("in2");
             JSONObject obj_delay = new JSONObject();
             obj_delay.put("action","delay");
-            obj_delay.put("time", 3);
+            obj_delay.put("time", in1);
             String objStr = obj_delay.toString();
             uploadStatement(out, objStr, in);
             int length = record_execute.size()-1;
@@ -401,10 +408,18 @@ public class ClientThread extends HandlerThread {
 
                 break;
             }
-            Thread.sleep(50);
+            Thread.sleep(10);
 
         }
         return str;
+    }
+
+
+    public boolean isConnected() {
+        if(mmSocket ==null) {
+            return false;
+        }
+        return isConnnected;
     }
 
     class Result_Compare {

@@ -24,4 +24,7 @@ public class Constants {
     public static final String EXTRA_DEVICE_INFO = "extra_device_info";
 
     public static final int REQUEST_ENABLE_BT = 0;
+
+
+    public static final String EXTRA_SCAN_RESULT = "extra_scan_result";
 }
