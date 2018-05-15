@@ -40,7 +40,44 @@ public class AvoidanceActivity extends AbstractBlocklyActivity {
             "turtle/generators_time.js"
     );
 
-    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG, new SoftReference<Context>(this));
+//    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG, new SoftReference<Context>(this));
+    String avoid = "repeat:-1:20\n" +
+        "  if:3:8:8\n" +
+        "    logic_compare:EQ:1:1\n" +
+        "      avoidance_left\n" +
+        "      avoidance_result:0\n" +
+        "    if:3:2:2\n" +
+        "      logic_compare:EQ:1:1\n" +
+        "        avoidance_right\n" +
+        "        avoidance_result:0\n" +
+        "      electrical_machinery_1:-200\n" +
+        "      electrical_machinery_2:-200\n" +
+        "      electrical_machinery_1:200\n" +
+        "      electrical_machinery_2:0\n" +
+        "    if:3:2:2\n" +
+        "      logic_compare:EQ:1:1\n" +
+        "        avoidance_right\n" +
+        "        avoidance_result:0\n" +
+        "      electrical_machinery_1:0\n" +
+        "      electrical_machinery_2:200\n" +
+        "      electrical_machinery_1:200\n" +
+        "      electrical_machinery_2:200\n";
+    private final MyCodeGeneratorCallback mCodeGeneratorCallback = new MyCodeGeneratorCallback(TAG,
+            new SoftReference<Context>(this));
+
+    class MyCodeGeneratorCallback extends DefaultCodeGeneratorCallback {
+        public MyCodeGeneratorCallback(String tag, SoftReference<Context> contextRef) {
+            super(tag, contextRef);
+        }
+        @Override
+        public void onFinishCodeGeneration(String generatedCode) {
+//            String str = ss;
+            if(avoid.equals(generatedCode)) {
+                generatedCode = "avoid_self_1\n";
+            }
+            super.onFinishCodeGeneration(generatedCode);
+        }
+    }
 
     @NonNull
     @Override

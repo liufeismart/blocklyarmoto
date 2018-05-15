@@ -239,30 +239,33 @@ public class ClientThread extends HandlerThread {
             uploadStatement(out, objStr, in);
             int length = record_execute.size()-1;
             for(int index= 0; index<in2; index++) {
-                JSONObject obj_execute = array.getJSONObject(record_execute.get(length-index));
-                String action_execute  = obj_execute.getString("action");
-                if("electrical_machinery_1".equals(action_execute) ||
-                        "electrical_machinery_2".equals(action_execute)) {
-                    int in_execute = obj_execute.getInt("in");
-                    obj_execute.put("in", 0);
-                    objStr = obj_execute.toString();
-                    obj_execute.put("in", in_execute);
-                    uploadStatement(out, objStr, in);
+                if((length-index>0)) {
+                    JSONObject obj_execute = array.getJSONObject(record_execute.get(length-index));
+                    String action_execute  = obj_execute.getString("action");
+                    if("electrical_machinery_1".equals(action_execute) ||
+                            "electrical_machinery_2".equals(action_execute)) {
+                        int in_execute = obj_execute.getInt("in");
+                        obj_execute.put("in", 0);
+                        objStr = obj_execute.toString();
+                        obj_execute.put("in", in_execute);
+                        uploadStatement(out, objStr, in);
+                    }
+                    else if("steering_engine".equals(action_execute)) {
+                        int in_execute = obj_execute.getInt("in");
+                        obj_execute.put("in", 90);
+                        objStr = obj_execute.toString();
+                        obj_execute.put("in", in_execute);
+                        uploadStatement(out, objStr, in);
+                    }
+                    else if("buzz".equals(action_execute)) {
+                        int in_execute = obj_execute.getInt("in");
+                        obj_execute.put("in", 0);
+                        objStr = obj_execute.toString();
+                        obj_execute.put("in", in_execute);
+                        uploadStatement(out, objStr, in);
+                    }
                 }
-                else if("steering_engine".equals(action_execute)) {
-                    int in_execute = obj_execute.getInt("in");
-                    obj_execute.put("in", 90);
-                    objStr = obj_execute.toString();
-                    obj_execute.put("in", in_execute);
-                    uploadStatement(out, objStr, in);
-                }
-                else if("buzz".equals(action_execute)) {
-                    int in_execute = obj_execute.getInt("in");
-                    obj_execute.put("in", 0);
-                    objStr = obj_execute.toString();
-                    obj_execute.put("in", in_execute);
-                    uploadStatement(out, objStr, in);
-                }
+
             }
         }
         else if(action.equals("variate_set")) {
@@ -293,6 +296,7 @@ public class ClientThread extends HandlerThread {
             uploadStatement(out, objStr, in);
             record_execute.add(i);
         }
+
         if(!isRun) {
             count = -1;
         }
@@ -319,7 +323,7 @@ public class ClientThread extends HandlerThread {
             int in3_cp = obj.getInt("in3");
             int count_cp_in3 = result_cp_in2.index+in3_cp;
             Result_Compare result_cp_in3 = null;
-            i = result_cp_in2.index;
+            i = result_cp_in2.index+1;
             for(; i<=count_cp_in3; i++) {
                 JSONObject obj_cp_in3 = array.getJSONObject(i);
                 result_cp_in3 = parseCompare(obj_cp_in3, array, i, out, in);
@@ -408,7 +412,7 @@ public class ClientThread extends HandlerThread {
 
                 break;
             }
-            Thread.sleep(10);
+//            Thread.sleep(10);
 
         }
         return str;

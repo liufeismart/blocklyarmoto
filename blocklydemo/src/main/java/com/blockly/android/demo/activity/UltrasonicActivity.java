@@ -49,9 +49,71 @@ public class UltrasonicActivity extends AbstractBlocklyActivity {
             "turtle/generators_variate.js"
     );
 
-    private final DefaultCodeGeneratorCallback mCodeGeneratorCallback = new DefaultCodeGeneratorCallback(TAG,
-            new SoftReference<Context>(this));
+    String avoid2 = "repeat:-1:48\n" +
+            "  steering_engine:90\n" +
+            "  variate_set:1:1\n" +
+            "    variate_front_distance\n" +
+            "    ultrasonic\n" +
+            "  steering_engine:180\n" +
+            "  variate_set:1:1\n" +
+            "    variate_left_distance\n" +
+            "    ultrasonic\n" +
+            "  steering_engine:0\n" +
+            "  variate_set:1:1\n" +
+            "    variate_right_distance\n" +
+            "    ultrasonic\n" +
+            "  if:3:3\n" +
+            "    logic_compare:VA:1:1\n" +
+            "      variate_front_distance\n" +
+            "      ultrasonic_result:15\n" +
+            "    last_time:1:2\n" +
+            "      electrical_machinery_1:-200\n" +
+            "      electrical_machinery_2:-200\n" +
+            "  if:3:22:3\n" +
+            "    logic_compare:VA:1:1\n" +
+            "      variate_front_distance\n" +
+            "      ultrasonic_result:30\n" +
+            "    if:3:9:9\n" +
+            "      logic_compare:GTR:1:1\n" +
+            "        variate_left_distance\n" +
+            "        variate_right_distance\n" +
+            "      if:3:3:2\n" +
+            "        logic_compare:VA:1:1\n" +
+            "          variate_left_distance\n" +
+            "          ultrasonic_result:20\n" +
+            "        last_time:1:2\n" +
+            "          electrical_machinery_1:-200\n" +
+            "          electrical_machinery_2:-200\n" +
+            "        last_time:1:1\n" +
+            "          electrical_machinery_2:200\n" +
+            "      if:3:3:2\n" +
+            "        logic_compare:VA:1:1\n" +
+            "          variate_right_distance\n" +
+            "          ultrasonic_result:20\n" +
+            "        last_time:1:2\n" +
+            "          electrical_machinery_1:-200\n" +
+            "          electrical_machinery_2:-200\n" +
+            "        last_time:1:1\n" +
+            "          electrical_machinery_1:200\n" +
+            "    last_time:1:2\n" +
+            "      electrical_machinery_1:200\n" +
+            "      electrical_machinery_2:200\n";
 
+    class MyCodeGeneratorCallback extends DefaultCodeGeneratorCallback {
+        public MyCodeGeneratorCallback(String tag, SoftReference<Context> contextRef) {
+            super(tag, contextRef);
+        }
+        @Override
+        public void onFinishCodeGeneration(String generatedCode) {
+//            String str = ss;
+            if(avoid2.equals(generatedCode)) {
+                generatedCode = "avoid_self_2\n";
+            }
+            super.onFinishCodeGeneration(generatedCode);
+        }
+    }
+    private final MyCodeGeneratorCallback mCodeGeneratorCallback = new MyCodeGeneratorCallback(TAG,
+            new SoftReference<Context>(this));
 
     @NonNull
     @Override

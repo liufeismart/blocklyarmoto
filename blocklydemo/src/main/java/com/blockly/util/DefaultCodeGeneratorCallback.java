@@ -22,8 +22,8 @@ import static java.lang.Integer.parseInt;
 
 public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeGeneratorCallback {
 
-    private String tag = "";
-    private SoftReference<Context> contextRef;
+    protected String tag = "";
+    protected SoftReference<Context> contextRef;
 
     public DefaultCodeGeneratorCallback(String tag, SoftReference<Context> contextRef) {
         this.tag = tag;
@@ -209,11 +209,20 @@ public class DefaultCodeGeneratorCallback implements CodeGenerationRequest.CodeG
                 }
                 array.put(item);
                 return new Bean(item, i);
+            } else if(statement.contains("tracking_self")) {
+                item.put("action", "tracking");
+            } else if(statement.contains("avoid_self_1")) {
+                item.put("action", "avoid");
+            } else if(statement.contains("follow_self")) {
+                item.put("action", "follow");
+            }  else if(statement.contains("avoid_self_2")) {
+                item.put("action", "avoid2");
             }
-            array.put(item);
+
         } catch(JSONException e) {
             e.printStackTrace();
         }
+        array.put(item);
         return new Bean(item, i);
     }
 

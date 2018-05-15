@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.blockly.android.demo.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,8 +23,9 @@ public abstract class ViewPagerActivity extends BackActivity {
 
     private ImageButton ib_pre, ib_next;
     private ViewPager vp_image;
+    private List<ImageView> imageViewList = new ArrayList<>();
 
-    private List<ImageView> images = new ArrayList<>();
+    private List<Integer> images;
     @Override
     protected void onCreateSelf(Bundle savedInstanceState) {
         setContentView(R.layout.activity_structure);
@@ -31,32 +33,14 @@ public abstract class ViewPagerActivity extends BackActivity {
         ib_next = this.findViewById(R.id.ib_next);
         vp_image = this.findViewById(R.id.vp_image);
         //
-        int[] image_ids = getImage();
-        for(int i=0; i<image_ids.length; i++) {
+        for(int i=0; i<5; i++) {
             ImageView iv = new ImageView(this);
             iv.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            iv.setImageResource(image_ids[i]);
-            images.add(iv);
+            imageViewList.add(iv);
         }
+        images = Arrays.asList(getImage());
         MyPagerAdapter mAdapter = new MyPagerAdapter(images);
         vp_image.setAdapter(mAdapter);
-        vp_image.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                setButtonState();
-            }
-        });
         //
         ib_pre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,12 +79,12 @@ public abstract class ViewPagerActivity extends BackActivity {
         }
     }
 
-    protected abstract int[] getImage();
+    protected abstract Integer[] getImage();
 
     class MyPagerAdapter extends PagerAdapter {
-        List<ImageView> images;
+        List<Integer> images;
 
-        public MyPagerAdapter(List<ImageView> images) {
+        public MyPagerAdapter(List<Integer> images) {
             this.images = images;
         }
 
@@ -117,14 +101,15 @@ public abstract class ViewPagerActivity extends BackActivity {
         @NonNull
         @Override
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
-            ImageView iv = images.get(position);
+            ImageView iv = imageViewList.get(position%5);
+            iv.setImageResource(images.get(position));
             container.addView(iv);
             return iv;
         }
 
         @Override
         public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-            container.removeView(images.get(position));
+            container.removeView(imageViewList.get(position%5));
         }
     }
 }
